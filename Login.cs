@@ -28,6 +28,11 @@ namespace SafeContractorApp
                 using (var connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
+                    Connection.user = connectionString;
+                    this.Hide();
+                    User ss = new User();
+                    ss.Show();
+                    connection.Close();
                     lbFeedback.Text = "Connection opened successfully.";
                 }
             }
