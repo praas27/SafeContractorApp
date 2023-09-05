@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.cbSitenaam = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cbSite = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbOpdrachtgever = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,9 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbFirma = new System.Windows.Forms.ComboBox();
             this.tbGSMnummer_werknemer = new System.Windows.Forms.TextBox();
-            this.stpExamen = new System.Windows.Forms.DateTimePicker();
+            this.dtpExamen = new System.Windows.Forms.DateTimePicker();
             this.tbMerk = new System.Windows.Forms.TextBox();
-            this.tbNummerplaat = new System.Windows.Forms.TextBox();
             this.tbGSMnummer_opdrachtgever = new System.Windows.Forms.TextBox();
             this.tbGSMnummer_site = new System.Windows.Forms.TextBox();
             this.tbSiteverantwoordelijke = new System.Windows.Forms.TextBox();
@@ -65,8 +64,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbNoodnummer = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cbSitenaam
@@ -78,13 +78,14 @@
             this.cbSitenaam.TabIndex = 19;
             this.cbSitenaam.Text = "Sitenaam";
             // 
-            // comboBox5
+            // cbSite
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(12, 283);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 18;
+            this.cbSite.FormattingEnabled = true;
+            this.cbSite.Location = new System.Drawing.Point(12, 283);
+            this.cbSite.Name = "cbSite";
+            this.cbSite.Size = new System.Drawing.Size(121, 21);
+            this.cbSite.TabIndex = 18;
+            this.cbSite.SelectedIndexChanged += new System.EventHandler(this.cbSite_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -102,6 +103,7 @@
             this.cbOpdrachtgever.Name = "cbOpdrachtgever";
             this.cbOpdrachtgever.Size = new System.Drawing.Size(121, 21);
             this.cbOpdrachtgever.TabIndex = 16;
+            this.cbOpdrachtgever.SelectedIndexChanged += new System.EventHandler(this.cbOpdrachtgever_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -119,6 +121,7 @@
             this.cbVoertuigen.Name = "cbVoertuigen";
             this.cbVoertuigen.Size = new System.Drawing.Size(121, 21);
             this.cbVoertuigen.TabIndex = 14;
+            this.cbVoertuigen.SelectedIndexChanged += new System.EventHandler(this.cbVoertuigen_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -136,6 +139,7 @@
             this.cbWerknemer.Name = "cbWerknemer";
             this.cbWerknemer.Size = new System.Drawing.Size(121, 21);
             this.cbWerknemer.TabIndex = 12;
+            this.cbWerknemer.SelectedIndexChanged += new System.EventHandler(this.cbWerknemer_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -153,6 +157,7 @@
             this.cbFirma.Name = "cbFirma";
             this.cbFirma.Size = new System.Drawing.Size(121, 21);
             this.cbFirma.TabIndex = 10;
+            this.cbFirma.SelectedIndexChanged += new System.EventHandler(this.cbFirma_SelectedIndexChanged);
             // 
             // tbGSMnummer_werknemer
             // 
@@ -161,13 +166,14 @@
             this.tbGSMnummer_werknemer.Size = new System.Drawing.Size(137, 20);
             this.tbGSMnummer_werknemer.TabIndex = 22;
             // 
-            // stpExamen
+            // dtpExamen
             // 
-            this.stpExamen.Location = new System.Drawing.Point(177, 100);
-            this.stpExamen.Name = "stpExamen";
-            this.stpExamen.Size = new System.Drawing.Size(143, 20);
-            this.stpExamen.TabIndex = 23;
-            this.stpExamen.Value = new System.DateTime(2023, 8, 31, 0, 0, 0, 0);
+            this.dtpExamen.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpExamen.Location = new System.Drawing.Point(177, 100);
+            this.dtpExamen.Name = "dtpExamen";
+            this.dtpExamen.Size = new System.Drawing.Size(143, 20);
+            this.dtpExamen.TabIndex = 23;
+            this.dtpExamen.Value = new System.DateTime(2023, 8, 31, 0, 0, 0, 0);
             // 
             // tbMerk
             // 
@@ -175,13 +181,6 @@
             this.tbMerk.Name = "tbMerk";
             this.tbMerk.Size = new System.Drawing.Size(143, 20);
             this.tbMerk.TabIndex = 24;
-            // 
-            // tbNummerplaat
-            // 
-            this.tbNummerplaat.Location = new System.Drawing.Point(354, 161);
-            this.tbNummerplaat.Name = "tbNummerplaat";
-            this.tbNummerplaat.Size = new System.Drawing.Size(137, 20);
-            this.tbNummerplaat.TabIndex = 25;
             // 
             // tbGSMnummer_opdrachtgever
             // 
@@ -192,14 +191,14 @@
             // 
             // tbGSMnummer_site
             // 
-            this.tbGSMnummer_site.Location = new System.Drawing.Point(354, 283);
+            this.tbGSMnummer_site.Location = new System.Drawing.Point(177, 330);
             this.tbGSMnummer_site.Name = "tbGSMnummer_site";
-            this.tbGSMnummer_site.Size = new System.Drawing.Size(137, 20);
+            this.tbGSMnummer_site.Size = new System.Drawing.Size(143, 20);
             this.tbGSMnummer_site.TabIndex = 29;
             // 
             // tbSiteverantwoordelijke
             // 
-            this.tbSiteverantwoordelijke.Location = new System.Drawing.Point(177, 283);
+            this.tbSiteverantwoordelijke.Location = new System.Drawing.Point(12, 330);
             this.tbSiteverantwoordelijke.Name = "tbSiteverantwoordelijke";
             this.tbSiteverantwoordelijke.Size = new System.Drawing.Size(143, 20);
             this.tbSiteverantwoordelijke.TabIndex = 28;
@@ -212,6 +211,7 @@
             this.btnDelete_Firma.TabIndex = 20;
             this.btnDelete_Firma.Text = "Delete";
             this.btnDelete_Firma.UseVisualStyleBackColor = true;
+            this.btnDelete_Firma.Click += new System.EventHandler(this.btnDelete_Firma_Click);
             // 
             // btnUpdate_Firma
             // 
@@ -221,6 +221,7 @@
             this.btnUpdate_Firma.TabIndex = 21;
             this.btnUpdate_Firma.Text = "Update";
             this.btnUpdate_Firma.UseVisualStyleBackColor = true;
+            this.btnUpdate_Firma.Click += new System.EventHandler(this.btnUpdate_Firma_Click);
             // 
             // btnAdd_Firma
             // 
@@ -230,6 +231,7 @@
             this.btnAdd_Firma.TabIndex = 30;
             this.btnAdd_Firma.Text = "Add";
             this.btnAdd_Firma.UseVisualStyleBackColor = true;
+            this.btnAdd_Firma.Click += new System.EventHandler(this.btnAdd_Firma_Click);
             // 
             // btnAdd_Werkenemer
             // 
@@ -239,6 +241,7 @@
             this.btnAdd_Werkenemer.TabIndex = 33;
             this.btnAdd_Werkenemer.Text = "Add";
             this.btnAdd_Werkenemer.UseVisualStyleBackColor = true;
+            this.btnAdd_Werkenemer.Click += new System.EventHandler(this.btnAdd_Werkenemer_Click);
             // 
             // btnUpdate_Werknemer
             // 
@@ -248,6 +251,7 @@
             this.btnUpdate_Werknemer.TabIndex = 32;
             this.btnUpdate_Werknemer.Text = "Update";
             this.btnUpdate_Werknemer.UseVisualStyleBackColor = true;
+            this.btnUpdate_Werknemer.Click += new System.EventHandler(this.btnUpdate_Werknemer_Click);
             // 
             // btnDelete_Werknemer
             // 
@@ -257,6 +261,7 @@
             this.btnDelete_Werknemer.TabIndex = 31;
             this.btnDelete_Werknemer.Text = "Delete";
             this.btnDelete_Werknemer.UseVisualStyleBackColor = true;
+            this.btnDelete_Werknemer.Click += new System.EventHandler(this.btnDelete_Werknemer_Click);
             // 
             // btnAdd_Voertuigen
             // 
@@ -266,6 +271,7 @@
             this.btnAdd_Voertuigen.TabIndex = 36;
             this.btnAdd_Voertuigen.Text = "Add";
             this.btnAdd_Voertuigen.UseVisualStyleBackColor = true;
+            this.btnAdd_Voertuigen.Click += new System.EventHandler(this.btnAdd_Voertuigen_Click);
             // 
             // btnUpdate_Voertuigen
             // 
@@ -275,6 +281,7 @@
             this.btnUpdate_Voertuigen.TabIndex = 35;
             this.btnUpdate_Voertuigen.Text = "Update";
             this.btnUpdate_Voertuigen.UseVisualStyleBackColor = true;
+            this.btnUpdate_Voertuigen.Click += new System.EventHandler(this.btnUpdate_Voertuigen_Click);
             // 
             // btnDelete_Voertuigen
             // 
@@ -284,6 +291,7 @@
             this.btnDelete_Voertuigen.TabIndex = 34;
             this.btnDelete_Voertuigen.Text = "Delete";
             this.btnDelete_Voertuigen.UseVisualStyleBackColor = true;
+            this.btnDelete_Voertuigen.Click += new System.EventHandler(this.btnDelete_Voertuigen_Click);
             // 
             // btnAdd_Opdrachtgever
             // 
@@ -293,6 +301,7 @@
             this.btnAdd_Opdrachtgever.TabIndex = 39;
             this.btnAdd_Opdrachtgever.Text = "Add";
             this.btnAdd_Opdrachtgever.UseVisualStyleBackColor = true;
+            this.btnAdd_Opdrachtgever.Click += new System.EventHandler(this.btnAdd_Opdrachtgever_Click);
             // 
             // btnUpdate_Opdrachtgever
             // 
@@ -302,6 +311,7 @@
             this.btnUpdate_Opdrachtgever.TabIndex = 38;
             this.btnUpdate_Opdrachtgever.Text = "Update";
             this.btnUpdate_Opdrachtgever.UseVisualStyleBackColor = true;
+            this.btnUpdate_Opdrachtgever.Click += new System.EventHandler(this.btnUpdate_Opdrachtgever_Click);
             // 
             // btnDelete_Opdrachtgever
             // 
@@ -311,33 +321,37 @@
             this.btnDelete_Opdrachtgever.TabIndex = 37;
             this.btnDelete_Opdrachtgever.Text = "Delete";
             this.btnDelete_Opdrachtgever.UseVisualStyleBackColor = true;
+            this.btnDelete_Opdrachtgever.Click += new System.EventHandler(this.btnDelete_Opdrachtgever_Click);
             // 
             // btnAdd_Site
             // 
-            this.btnAdd_Site.Location = new System.Drawing.Point(523, 280);
+            this.btnAdd_Site.Location = new System.Drawing.Point(523, 328);
             this.btnAdd_Site.Name = "btnAdd_Site";
             this.btnAdd_Site.Size = new System.Drawing.Size(75, 23);
             this.btnAdd_Site.TabIndex = 42;
             this.btnAdd_Site.Text = "Add";
             this.btnAdd_Site.UseVisualStyleBackColor = true;
+            this.btnAdd_Site.Click += new System.EventHandler(this.btnAdd_Site_Click);
             // 
             // btnUpdate_Sitenaam
             // 
-            this.btnUpdate_Sitenaam.Location = new System.Drawing.Point(620, 279);
+            this.btnUpdate_Sitenaam.Location = new System.Drawing.Point(620, 327);
             this.btnUpdate_Sitenaam.Name = "btnUpdate_Sitenaam";
             this.btnUpdate_Sitenaam.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate_Sitenaam.TabIndex = 41;
             this.btnUpdate_Sitenaam.Text = "Update";
             this.btnUpdate_Sitenaam.UseVisualStyleBackColor = true;
+            this.btnUpdate_Sitenaam.Click += new System.EventHandler(this.btnUpdate_Sitenaam_Click);
             // 
             // btnDelete_Site
             // 
-            this.btnDelete_Site.Location = new System.Drawing.Point(713, 280);
+            this.btnDelete_Site.Location = new System.Drawing.Point(713, 328);
             this.btnDelete_Site.Name = "btnDelete_Site";
             this.btnDelete_Site.Size = new System.Drawing.Size(75, 23);
             this.btnDelete_Site.TabIndex = 40;
             this.btnDelete_Site.Text = "Delete";
             this.btnDelete_Site.UseVisualStyleBackColor = true;
+            this.btnDelete_Site.Click += new System.EventHandler(this.btnDelete_Site_Click);
             // 
             // label5
             // 
@@ -360,7 +374,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(177, 267);
+            this.label7.Location = new System.Drawing.Point(12, 314);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 13);
             this.label7.TabIndex = 45;
@@ -384,31 +398,40 @@
             this.label9.TabIndex = 47;
             this.label9.Text = "GSM nummer";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(351, 145);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 13);
-            this.label10.TabIndex = 48;
-            this.label10.Text = "Nummerplaat";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(351, 267);
+            this.label12.Location = new System.Drawing.Point(177, 314);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 13);
             this.label12.TabIndex = 50;
             this.label12.Text = "GSM nummer";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(348, 314);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 13);
+            this.label11.TabIndex = 52;
+            this.label11.Text = "Noondnummer";
+            // 
+            // tbNoodnummer
+            // 
+            this.tbNoodnummer.Location = new System.Drawing.Point(348, 330);
+            this.tbNoodnummer.Name = "tbNoodnummer";
+            this.tbNoodnummer.Size = new System.Drawing.Size(143, 20);
+            this.tbNoodnummer.TabIndex = 51;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 353);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(816, 527);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.tbNoodnummer);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -430,14 +453,13 @@
             this.Controls.Add(this.tbGSMnummer_site);
             this.Controls.Add(this.tbSiteverantwoordelijke);
             this.Controls.Add(this.tbGSMnummer_opdrachtgever);
-            this.Controls.Add(this.tbNummerplaat);
             this.Controls.Add(this.tbMerk);
-            this.Controls.Add(this.stpExamen);
+            this.Controls.Add(this.dtpExamen);
             this.Controls.Add(this.tbGSMnummer_werknemer);
             this.Controls.Add(this.btnUpdate_Firma);
             this.Controls.Add(this.btnDelete_Firma);
             this.Controls.Add(this.cbSitenaam);
-            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.cbSite);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbOpdrachtgever);
             this.Controls.Add(this.label3);
@@ -446,6 +468,7 @@
             this.Controls.Add(this.cbWerknemer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbFirma);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admin";
             this.Text = "Admin";
             this.ResumeLayout(false);
@@ -456,7 +479,7 @@
         #endregion
 
         private System.Windows.Forms.Label cbSitenaam;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cbSite;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbOpdrachtgever;
         private System.Windows.Forms.Label label3;
@@ -466,9 +489,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbFirma;
         private System.Windows.Forms.TextBox tbGSMnummer_werknemer;
-        private System.Windows.Forms.DateTimePicker stpExamen;
+        private System.Windows.Forms.DateTimePicker dtpExamen;
         private System.Windows.Forms.TextBox tbMerk;
-        private System.Windows.Forms.TextBox tbNummerplaat;
         private System.Windows.Forms.TextBox tbGSMnummer_opdrachtgever;
         private System.Windows.Forms.TextBox tbGSMnummer_site;
         private System.Windows.Forms.TextBox tbSiteverantwoordelijke;
@@ -492,7 +514,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox tbNoodnummer;
     }
 }

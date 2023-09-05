@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace SafeContractorApp
 {
-    public partial class User : Form
+    public partial class Installingen : Form
     {
-        public User()
+        public Installingen()
         {
             InitializeComponent();
             tbPath.Text = Properties.Settings.Default.Work;
         }
 
-        private void btnPath_Click(object sender, EventArgs e)
+        private void btnPath_Click_1(object sender, EventArgs e)
         {
             using (var dialog = new FolderBrowserDialog())
             {
@@ -30,17 +30,6 @@ namespace SafeContractorApp
                     tbPath.Text = Properties.Settings.Default.Work; // Weergeven in het tekstvak
                 }
             }
-        }
-
-        private void btnAdminpage_Click(object sender, EventArgs e)
-        {
-            AdminLogin ss = new AdminLogin();
-            ss.Show();
-        }
-
-        private void User_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
