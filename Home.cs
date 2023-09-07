@@ -77,7 +77,7 @@ namespace SafeContractorApp
         private void btnAdminpage_Click(object sender, EventArgs e)
         {
             OpenSchildForm(new Admin(), sender);
-            lbTitel.Text = "Admin pagina";
+            lbTitel.Text = "Admin gebruiker";
             pnlNav.Height = btnAdminpage.Height;
             pnlNav.Top = btnAdminpage.Top;
             pnlNav.Left = btnAdminpage.Left;
@@ -92,6 +92,46 @@ namespace SafeContractorApp
             pnlNav.Top = btnDashbord.Top;
             pnlNav.Left = btnDashbord.Left;
             btnDashbord.ForeColor = Color.White;
+        }
+
+        private void btnSpicialVergunning_Click(object sender, EventArgs e)
+        {
+            OpenSchildForm(new SpicialVergunning(), sender);
+            lbTitel.Text = "Admin vergunningen";
+            pnlNav.Height = btnSpicialVergunning.Height;
+            pnlNav.Top = btnSpicialVergunning.Top;
+            pnlNav.Left = btnSpicialVergunning.Left;
+            btnSpicialVergunning.ForeColor = Color.White;
+        }
+
+        private void btnDashbord_Leave(object sender, EventArgs e)
+        {
+            btnDashbord.ForeColor = Color.FromArgb(147, 140, 151);
+        }
+
+        private void btnVergunnigen_Leave(object sender, EventArgs e)
+        {
+            btnVergunnigen.ForeColor = Color.FromArgb(147, 140, 151);
+        }
+
+        private void btnAddvergunning_Leave(object sender, EventArgs e)
+        {
+            btnAddvergunning.ForeColor = Color.FromArgb(147, 140, 151);
+        }
+
+        private void btnAdminpage_Leave(object sender, EventArgs e)
+        {
+            btnAdminpage.ForeColor = Color.FromArgb(147, 140, 151);
+        }
+
+        private void btnSpicialVergunning_Leave(object sender, EventArgs e)
+        {
+            btnSpicialVergunning.ForeColor = Color.FromArgb(147, 140, 151);
+        }
+
+        private void btnSetting_Leave(object sender, EventArgs e)
+        {
+            btnSetting.ForeColor = Color.FromArgb(147, 140, 151);
         }
     }
 }

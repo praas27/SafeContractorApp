@@ -37,7 +37,7 @@
             this.btnInInfo = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
             this.btnMaveerar = new System.Windows.Forms.Button();
-            this.btnAfdrukken = new System.Windows.Forms.Button();
+            this.btnSpicialVergunning = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnAdminpage = new System.Windows.Forms.Button();
             this.btnAddvergunning = new System.Windows.Forms.Button();
@@ -66,7 +66,7 @@
             this.MenuPanel.Controls.Add(this.btnInInfo);
             this.MenuPanel.Controls.Add(this.btnStudents);
             this.MenuPanel.Controls.Add(this.btnMaveerar);
-            this.MenuPanel.Controls.Add(this.btnAfdrukken);
+            this.MenuPanel.Controls.Add(this.btnSpicialVergunning);
             this.MenuPanel.Controls.Add(this.btnSetting);
             this.MenuPanel.Controls.Add(this.btnAdminpage);
             this.MenuPanel.Controls.Add(this.btnAddvergunning);
@@ -192,21 +192,23 @@
             this.btnMaveerar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMaveerar.UseVisualStyleBackColor = true;
             // 
-            // btnAfdrukken
+            // btnSpicialVergunning
             // 
-            this.btnAfdrukken.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAfdrukken.FlatAppearance.BorderSize = 0;
-            this.btnAfdrukken.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAfdrukken.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.btnAfdrukken.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(140)))), ((int)(((byte)(151)))));
-            this.btnAfdrukken.Location = new System.Drawing.Point(0, 210);
-            this.btnAfdrukken.Name = "btnAfdrukken";
-            this.btnAfdrukken.Size = new System.Drawing.Size(200, 40);
-            this.btnAfdrukken.TabIndex = 7;
-            this.btnAfdrukken.Text = "Afdrukken";
-            this.btnAfdrukken.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAfdrukken.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAfdrukken.UseVisualStyleBackColor = true;
+            this.btnSpicialVergunning.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSpicialVergunning.FlatAppearance.BorderSize = 0;
+            this.btnSpicialVergunning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSpicialVergunning.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.btnSpicialVergunning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(140)))), ((int)(((byte)(151)))));
+            this.btnSpicialVergunning.Location = new System.Drawing.Point(0, 210);
+            this.btnSpicialVergunning.Name = "btnSpicialVergunning";
+            this.btnSpicialVergunning.Size = new System.Drawing.Size(200, 40);
+            this.btnSpicialVergunning.TabIndex = 7;
+            this.btnSpicialVergunning.Text = "Admin vergunning";
+            this.btnSpicialVergunning.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSpicialVergunning.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSpicialVergunning.UseVisualStyleBackColor = true;
+            this.btnSpicialVergunning.Click += new System.EventHandler(this.btnSpicialVergunning_Click);
+            this.btnSpicialVergunning.Leave += new System.EventHandler(this.btnSpicialVergunning_Leave);
             // 
             // btnSetting
             // 
@@ -224,6 +226,7 @@
             this.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSetting.UseVisualStyleBackColor = true;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            this.btnSetting.Leave += new System.EventHandler(this.btnSetting_Leave);
             // 
             // btnAdminpage
             // 
@@ -236,11 +239,12 @@
             this.btnAdminpage.Name = "btnAdminpage";
             this.btnAdminpage.Size = new System.Drawing.Size(200, 40);
             this.btnAdminpage.TabIndex = 4;
-            this.btnAdminpage.Text = "Adminpagina";
+            this.btnAdminpage.Text = "Admin gebruiker";
             this.btnAdminpage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminpage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminpage.UseVisualStyleBackColor = true;
             this.btnAdminpage.Click += new System.EventHandler(this.btnAdminpage_Click);
+            this.btnAdminpage.Leave += new System.EventHandler(this.btnAdminpage_Leave);
             // 
             // btnAddvergunning
             // 
@@ -258,6 +262,7 @@
             this.btnAddvergunning.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddvergunning.UseVisualStyleBackColor = true;
             this.btnAddvergunning.Click += new System.EventHandler(this.btnAddvergunning_Click);
+            this.btnAddvergunning.Leave += new System.EventHandler(this.btnAddvergunning_Leave);
             // 
             // btnVergunnigen
             // 
@@ -275,6 +280,7 @@
             this.btnVergunnigen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVergunnigen.UseVisualStyleBackColor = true;
             this.btnVergunnigen.Click += new System.EventHandler(this.btnVergunnigen_Click);
+            this.btnVergunnigen.Leave += new System.EventHandler(this.btnVergunnigen_Leave);
             // 
             // btnDashbord
             // 
@@ -292,6 +298,7 @@
             this.btnDashbord.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDashbord.UseVisualStyleBackColor = true;
             this.btnDashbord.Click += new System.EventHandler(this.btnDashbord_Click);
+            this.btnDashbord.Leave += new System.EventHandler(this.btnDashbord_Leave);
             // 
             // panel2
             // 
@@ -389,7 +396,7 @@
         private System.Windows.Forms.Button btnInInfo;
         private System.Windows.Forms.Button btnStudents;
         private System.Windows.Forms.Button btnMaveerar;
-        private System.Windows.Forms.Button btnAfdrukken;
+        private System.Windows.Forms.Button btnSpicialVergunning;
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button btnAdminpage;
         private System.Windows.Forms.Button btnAddvergunning;

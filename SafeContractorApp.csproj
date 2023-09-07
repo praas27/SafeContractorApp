@@ -137,6 +137,12 @@
     <Compile Include="AadVergunningen.Designer.cs">
       <DependentUpon>AadVergunningen.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpicialVergunning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpicialVergunning.Designer.cs">
+      <DependentUpon>SpicialVergunning.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vergunningen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </Compile>
     <EmbeddedResource Include="AadVergunningen.resx">
       <DependentUpon>AadVergunningen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpicialVergunning.resx">
+      <DependentUpon>SpicialVergunning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vergunningen.resx">
       <DependentUpon>Vergunningen.cs</DependentUpon>
