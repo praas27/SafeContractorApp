@@ -187,5 +187,15 @@ namespace SafeContractorApp
                 tbExtra.Text = string.Empty;
             }
         }
+
+        private void chbVuurvergunning_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbVuurvergunning.Checked)
+            {
+                VuurVariablen.opdrachtgever = "Naam van de uitvoerde: " + cbOpdrachtgever.Text;
+                Vuurvergunning ss = new Vuurvergunning();
+                ss.Show();
+            }
+        }
     }
 }

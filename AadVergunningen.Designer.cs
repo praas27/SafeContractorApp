@@ -153,6 +153,7 @@
             this.chbVuurvergunning.TabIndex = 10;
             this.chbVuurvergunning.Text = "Vuurvergunning ";
             this.chbVuurvergunning.UseVisualStyleBackColor = true;
+            this.chbVuurvergunning.CheckedChanged += new System.EventHandler(this.chbVuurvergunning_CheckedChanged);
             // 
             // chbBeslotenvergunning
             // 

@@ -149,6 +149,13 @@
     <Compile Include="Vergunningen.Designer.cs">
       <DependentUpon>Vergunningen.cs</DependentUpon>
     </Compile>
+    <Compile Include="VuurVariablen.cs" />
+    <Compile Include="Vuurvergunning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vuurvergunning.Designer.cs">
+      <DependentUpon>Vuurvergunning.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vergunningen.resx">
       <DependentUpon>Vergunningen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vuurvergunning.resx">
+      <DependentUpon>Vuurvergunning.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
