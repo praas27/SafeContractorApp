@@ -26,7 +26,7 @@ namespace SafeContractorApp
             cbInstallatie.Text = string.Empty;
             cbAard.Text = string.Empty;
             string query = "select * from werken";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -57,7 +57,7 @@ namespace SafeContractorApp
         {
             int id = 0;
             string query = "SELECT werken_id FROM werken where werken=@werken and type=@type;";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -106,12 +106,12 @@ namespace SafeContractorApp
 
         private void btnSumit_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 string query = "INSERT INTO vuurvergunning (" +
                 "datum,start_time,end_time,verlenging,bijkomnde_maatregelen) " +
                 "VALUES (@datum,@start_time,@end_time,@verlenging,@bijkomnde_maatregelen);";
-                using (var connection = new MySqlConnection(Connection.user))
+                using (var connection = new MySqlConnection(Globaal.user))
                 {
                     connection.Open();
                     var command = new MySqlCommand(query, connection);
@@ -123,9 +123,10 @@ namespace SafeContractorApp
                     command.ExecuteNonQuery();
                     connection.Close();
                 }
+
                 int id = 0;
                 query = "SELECT vuurvergunning_id FROM vuurvergunning ORDER BY vuurvergunning_id DESC LIMIT 1;";
-                using (var connection = new MySqlConnection(Connection.user))
+                using (var connection = new MySqlConnection(Globaal.user))
                 {
                     connection.Open();
                     var command = new MySqlCommand(query, connection);
@@ -134,21 +135,23 @@ namespace SafeContractorApp
                     while (reader.Read())
                     {
                         id = int.Parse(reader["vuurvergunning_id"].ToString());
+                        Globaal.vuurId = id;
                     }
                     connection.Close();
                 }
+
                 query = "INSERT INTO werken_has_vuurvergunning " +
                     "(extra,vuurvergunning_vuurvergunning_id,werken_werken_id) " +
                     "VALUES (@extra,@vuurvergunning_vuurvergunning_id,@werken_werken_id);";
                 for (int i = 0; i < lbxAard.Items.Count; i++)
                 {
-                    using (var connection = new MySqlConnection(Connection.user))
+                    using (var connection = new MySqlConnection(Globaal.user))
                     {
                         connection.Open();
                         var command = new MySqlCommand(query, connection);
                         command.Parameters.AddWithValue("@extra", lbxAardP.Items[i].ToString());
                         command.Parameters.AddWithValue("@vuurvergunning_vuurvergunning_id", id);
-                        command.Parameters.AddWithValue("@werken_werken_id", Get_werken_Id(lbxAard.Items[0].ToString(), 'A'));
+                        command.Parameters.AddWithValue("@werken_werken_id", Get_werken_Id(lbxAard.Items[i].ToString(), 'A'));
                         command.ExecuteNonQuery();
                         connection.Close();
                     }
@@ -156,13 +159,13 @@ namespace SafeContractorApp
 
                 for (int i = 0; i < lbxOmpgeving.Items.Count; i++)
                 {
-                    using (var connection = new MySqlConnection(Connection.user))
+                    using (var connection = new MySqlConnection(Globaal.user))
                     {
                         connection.Open();
                         var command = new MySqlCommand(query, connection);
                         command.Parameters.AddWithValue("@extra", lbxOmpgevingP.Items[i].ToString());
                         command.Parameters.AddWithValue("@vuurvergunning_vuurvergunning_id", id);
-                        command.Parameters.AddWithValue("@werken_werken_id", Get_werken_Id(lbxOmpgeving.Items[0].ToString(), 'O'));
+                        command.Parameters.AddWithValue("@werken_werken_id", Get_werken_Id(lbxOmpgeving.Items[i].ToString(), 'O'));
                         command.ExecuteNonQuery();
                         connection.Close();
                     }
@@ -170,13 +173,13 @@ namespace SafeContractorApp
 
                 for (int i = 0; i < lbxBrand.Items.Count; i++)
                 {
-                    using (var connection = new MySqlConnection(Connection.user))
+                    using (var connection = new MySqlConnection(Globaal.user))
                     {
                         connection.Open();
                         var command = new MySqlCommand(query, connection);
                         command.Parameters.AddWithValue("@extra", lbxBrandP.Items[i].ToString());
                         command.Parameters.AddWithValue("@vuurvergunning_vuurvergunning_id", id);
-                        command.Parameters.AddWithValue("@werken_werken_id", Get_werken_Id(lbxBrand.Items[0].ToString(), 'B'));
+                        command.Parameters.AddWithValue("@werken_werken_id", Get_werken_Id(lbxBrand.Items[i].ToString(), 'B'));
                         command.ExecuteNonQuery();
                         connection.Close();
                     }
@@ -184,20 +187,20 @@ namespace SafeContractorApp
 
                 for (int i = 0; i < lbxInstallatie.Items.Count; i++)
                 {
-                    using (var connection = new MySqlConnection(Connection.user))
+                    using (var connection = new MySqlConnection(Globaal.user))
                     {
                         connection.Open();
                         var command = new MySqlCommand(query, connection);
                         command.Parameters.AddWithValue("@extra", lbxInstallatieP.Items[i].ToString());
                         command.Parameters.AddWithValue("@vuurvergunning_vuurvergunning_id", id);
-                        command.Parameters.AddWithValue("@werken_werken_id", Get_werken_Id(lbxInstallatie.Items[0].ToString(), 'I'));
+                        command.Parameters.AddWithValue("@werken_werken_id", Get_werken_Id(lbxInstallatie.Items[i].ToString(), 'I'));
                         command.ExecuteNonQuery();
                         connection.Close();
                     }
                 }
                 this.Close();
-            }
-            catch { }
+            //}
+            //catch { }
             
         }
     }

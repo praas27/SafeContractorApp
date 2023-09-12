@@ -110,7 +110,7 @@
             // 
             // btnAddWerk
             // 
-            this.btnAddWerk.Location = new System.Drawing.Point(640, 37);
+            this.btnAddWerk.Location = new System.Drawing.Point(640, 48);
             this.btnAddWerk.Name = "btnAddWerk";
             this.btnAddWerk.Size = new System.Drawing.Size(75, 23);
             this.btnAddWerk.TabIndex = 7;
@@ -120,7 +120,7 @@
             // 
             // btnDeleteWork
             // 
-            this.btnDeleteWork.Location = new System.Drawing.Point(734, 37);
+            this.btnDeleteWork.Location = new System.Drawing.Point(734, 48);
             this.btnDeleteWork.Name = "btnDeleteWork";
             this.btnDeleteWork.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteWork.TabIndex = 8;
@@ -255,7 +255,7 @@
             // 
             // btnDeleteRisico
             // 
-            this.btnDeleteRisico.Location = new System.Drawing.Point(734, 260);
+            this.btnDeleteRisico.Location = new System.Drawing.Point(734, 269);
             this.btnDeleteRisico.Name = "btnDeleteRisico";
             this.btnDeleteRisico.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteRisico.TabIndex = 24;
@@ -265,7 +265,7 @@
             // 
             // btnAddRisico
             // 
-            this.btnAddRisico.Location = new System.Drawing.Point(640, 260);
+            this.btnAddRisico.Location = new System.Drawing.Point(640, 269);
             this.btnAddRisico.Name = "btnAddRisico";
             this.btnAddRisico.Size = new System.Drawing.Size(75, 23);
             this.btnAddRisico.TabIndex = 23;
@@ -275,7 +275,7 @@
             // 
             // btnDeleteMetingen
             // 
-            this.btnDeleteMetingen.Location = new System.Drawing.Point(734, 309);
+            this.btnDeleteMetingen.Location = new System.Drawing.Point(734, 318);
             this.btnDeleteMetingen.Name = "btnDeleteMetingen";
             this.btnDeleteMetingen.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteMetingen.TabIndex = 26;
@@ -285,7 +285,7 @@
             // 
             // btnAddMetingen
             // 
-            this.btnAddMetingen.Location = new System.Drawing.Point(640, 309);
+            this.btnAddMetingen.Location = new System.Drawing.Point(640, 318);
             this.btnAddMetingen.Name = "btnAddMetingen";
             this.btnAddMetingen.Size = new System.Drawing.Size(75, 23);
             this.btnAddMetingen.TabIndex = 25;
@@ -295,7 +295,7 @@
             // 
             // btnDeleteMaatregelen
             // 
-            this.btnDeleteMaatregelen.Location = new System.Drawing.Point(734, 356);
+            this.btnDeleteMaatregelen.Location = new System.Drawing.Point(734, 361);
             this.btnDeleteMaatregelen.Name = "btnDeleteMaatregelen";
             this.btnDeleteMaatregelen.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteMaatregelen.TabIndex = 28;
@@ -305,7 +305,7 @@
             // 
             // btnAddMaatregelen
             // 
-            this.btnAddMaatregelen.Location = new System.Drawing.Point(640, 356);
+            this.btnAddMaatregelen.Location = new System.Drawing.Point(640, 361);
             this.btnAddMaatregelen.Name = "btnAddMaatregelen";
             this.btnAddMaatregelen.Size = new System.Drawing.Size(75, 23);
             this.btnAddMaatregelen.TabIndex = 27;
@@ -315,7 +315,7 @@
             // 
             // btnDeleteBeschermidellen
             // 
-            this.btnDeleteBeschermidellen.Location = new System.Drawing.Point(734, 397);
+            this.btnDeleteBeschermidellen.Location = new System.Drawing.Point(734, 401);
             this.btnDeleteBeschermidellen.Name = "btnDeleteBeschermidellen";
             this.btnDeleteBeschermidellen.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteBeschermidellen.TabIndex = 30;
@@ -325,7 +325,7 @@
             // 
             // btnAddBeschermiddelen
             // 
-            this.btnAddBeschermiddelen.Location = new System.Drawing.Point(640, 397);
+            this.btnAddBeschermiddelen.Location = new System.Drawing.Point(640, 401);
             this.btnAddBeschermiddelen.Name = "btnAddBeschermiddelen";
             this.btnAddBeschermiddelen.Size = new System.Drawing.Size(75, 23);
             this.btnAddBeschermiddelen.TabIndex = 29;

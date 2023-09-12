@@ -37,13 +37,13 @@ namespace SafeContractorApp
                 using (var connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    Connection.username = tbUsername.Text;
-                    Connection.host = tbHost.Text;
-                    Connection.database = tbDatabase.Text;
+                    Globaal.username = tbUsername.Text;
+                    Globaal.host = tbHost.Text;
+                    Globaal.database = tbDatabase.Text;
                     lbFeedback.Text = "Connection opened successfully.";
-                    Connection.foutcode = "Welcome";
+                    Globaal.foutcode = "Welcome";
                     connection.Close();
-                    Connection.user = connectionString;
+                    Globaal.user = connectionString;
                     this.Hide();
                     Home ss = new Home();
                     ss.Show();
@@ -51,7 +51,7 @@ namespace SafeContractorApp
             }
             catch (Exception ex)
             {
-                Connection.foutcode = "Error";
+                Globaal.foutcode = "Error";
                 lbFeedback.Text = $"Error: {ex.Message}";
             }
             Properties.Settings.Default.host = tbHost.Text;

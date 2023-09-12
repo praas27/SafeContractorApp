@@ -19,7 +19,7 @@ namespace SafeContractorApp
             cbWerk.Items.Clear();
             cbWerk.Text = string.Empty;
             string query = "select werken from werken";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -39,7 +39,7 @@ namespace SafeContractorApp
             cbMaatregel.Items.Clear();
             cbMaatregel.Text = string.Empty;
             string query = "select maatregel from maatregelen";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -59,7 +59,7 @@ namespace SafeContractorApp
             cbRisico.Items.Clear();
             cbRisico.Text = string.Empty;
             string query = "select risico from risico";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -79,7 +79,7 @@ namespace SafeContractorApp
             cbMeting.Items.Clear();
             cbMeting.Text = string.Empty;
             string query = "select meting from metingen";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -99,7 +99,7 @@ namespace SafeContractorApp
             cbBeschermidelen.Items.Clear();
             cbBeschermidelen.Text = string.Empty;
             string query = "select beschermiddelen from beschermiddelen";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -119,7 +119,7 @@ namespace SafeContractorApp
             cbMaatregelen.Items.Clear();
             cbMaatregelen.Text = string.Empty;
             string query = "select besloten_maatregelen from besloten_maatregelen";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -138,7 +138,7 @@ namespace SafeContractorApp
         private void DeleteDataFromTable(string tableName, string columnName, string value)
         {
             string query = $"DELETE FROM {tableName} WHERE {columnName} = @value";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -179,7 +179,7 @@ namespace SafeContractorApp
         private void btnAddWerk_Click(object sender, EventArgs e)
         {
             string query = "insert into werken (werken,type) values (@werken,@type)";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -201,7 +201,7 @@ namespace SafeContractorApp
         {
             
             string query = "insert into maatregelen (maatregel) values (@maatregel)";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -221,7 +221,7 @@ namespace SafeContractorApp
         private void btnAddRisico_Click(object sender, EventArgs e)
         {
             string query = "insert into risico (risico) values (@risico)";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -241,7 +241,7 @@ namespace SafeContractorApp
         private void btnAddMetingen_Click(object sender, EventArgs e)
         {
             string query = "insert into metingen (meting) values (@meting)";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -261,7 +261,7 @@ namespace SafeContractorApp
         private void btnAddMaatregelen_Click(object sender, EventArgs e)
         {
             string query = "insert into besloten_maatregelen (besloten_maatregelen) values (@besloten_maatregelen)";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -281,7 +281,7 @@ namespace SafeContractorApp
         private void btnAddBeschermiddelen_Click(object sender, EventArgs e)
         {
             string query = "insert into beschermiddelen (beschermiddelen) values (@beschermiddelen)";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);

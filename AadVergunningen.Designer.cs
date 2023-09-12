@@ -164,6 +164,7 @@
             this.chbBeslotenvergunning.TabIndex = 11;
             this.chbBeslotenvergunning.Text = "Vergunning besloten ruimtes";
             this.chbBeslotenvergunning.UseVisualStyleBackColor = true;
+            this.chbBeslotenvergunning.CheckedChanged += new System.EventHandler(this.chbBeslotenvergunning_CheckedChanged);
             // 
             // chbOpenvergunning
             // 
@@ -174,6 +175,7 @@
             this.chbOpenvergunning.TabIndex = 12;
             this.chbOpenvergunning.Text = "Vergunning openen van leidingen";
             this.chbOpenvergunning.UseVisualStyleBackColor = true;
+            this.chbOpenvergunning.CheckedChanged += new System.EventHandler(this.chbOpenvergunning_CheckedChanged);
             // 
             // btnSumit
             // 

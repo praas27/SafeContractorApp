@@ -91,7 +91,6 @@ namespace SafeContractorApp
             pnlNav.Height = btnDashbord.Height;
             pnlNav.Top = btnDashbord.Top;
             pnlNav.Left = btnDashbord.Left;
-            btnDashbord.ForeColor = Color.White;
         }
 
         private void btnSpicialVergunning_Click(object sender, EventArgs e)

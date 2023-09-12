@@ -15,10 +15,10 @@ namespace SafeContractorApp
         public Dashbord()
         {
             InitializeComponent();
-            lbWelcome.Text = Connection.foutcode;
-            lbHost.Text = "Host: " + Connection.host;
-            lbDatabse.Text = "Database: " + Connection.database;
-            lbUser.Text = "User: " + Connection.username;
+            lbWelcome.Text = Globaal.foutcode;
+            lbHost.Text = "Host: " + Globaal.host;
+            lbDatabse.Text = "Database: " + Globaal.database;
+            lbUser.Text = "User: " + Globaal.username;
         }
     }
 }

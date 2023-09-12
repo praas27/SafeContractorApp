@@ -27,7 +27,7 @@ namespace SafeContractorApp
             cbOpdrachtgever.Text = string.Empty;
             tbGSMnummer_opdrachtgever.Text = string.Empty;
             string query = "select opdrachtgever_naam from opdrachtgevers";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -50,7 +50,7 @@ namespace SafeContractorApp
             tbGSMnummer_site.Text = string.Empty;
             tbNoodnummer.Text = string.Empty;   
             string query = "select site_naam from sites";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -71,7 +71,7 @@ namespace SafeContractorApp
             cbVoertuigen.Text = string.Empty;
             tbMerk.Text = string.Empty;
             string query = "select voertuig_naam from voertuigen";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -93,7 +93,7 @@ namespace SafeContractorApp
             tbGSMnummer_werknemer.Text = string.Empty;
             dtpExamen.Value = DateTime.Now;
             string query = "select werknemer_naam from werknemers";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -113,7 +113,7 @@ namespace SafeContractorApp
             cbFirma.Items.Clear();
             cbFirma.Text = string.Empty;
             string query = "select firma_naam from firma";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -133,7 +133,7 @@ namespace SafeContractorApp
             int id = 0;
             string query = $"SELECT {columnName}_id FROM {tableName} WHERE {columnName}_naam = @value";
 
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -153,7 +153,7 @@ namespace SafeContractorApp
         private void DeleteDataFromTable(string tableName, string columnName, string value)
         {
             string query = $"DELETE FROM {tableName} WHERE {columnName}_naam = @value";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -178,7 +178,7 @@ namespace SafeContractorApp
         {
             
             string query = "insert into firma (firma_naam) values (@firma_naam)";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -192,7 +192,7 @@ namespace SafeContractorApp
         private void btnAdd_Werkenemer_Click(object sender, EventArgs e)
         {
             string query = "insert into werknemers (werknemer_naam,datum_examen,gsm_nummer) values (@werknemers_naam,@datum_examen,@gsm_nummer)";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -208,7 +208,7 @@ namespace SafeContractorApp
         private void btnAdd_Voertuigen_Click(object sender, EventArgs e)
         {
             string query = "insert into voertuigen (voertuig_naam,merk) values (@voertuig_naam,@merk)";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -223,7 +223,7 @@ namespace SafeContractorApp
         private void btnAdd_Opdrachtgever_Click(object sender, EventArgs e)
         {
             string query = "insert into opdrachtgevers (opdrachtgever_naam,gsm_nummer) values (@opdrachtgever_naam,@gsm_nummer)";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -238,7 +238,7 @@ namespace SafeContractorApp
         private void btnAdd_Site_Click(object sender, EventArgs e)
         {
             string query = "insert into sites (site_naam,siteverantwoordelijke,gsm_nummer,noodnummer) values (@site_naam,@siteverantwoordelijke,@gsm_nummer,@noodnummer)";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -261,7 +261,7 @@ namespace SafeContractorApp
         {
             weknemers_naam_pv = cbWerknemer.Text;
             string query = "select datum_examen,gsm_nummer from werknemers where werknemer_naam=@werknemer_naam";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -283,7 +283,7 @@ namespace SafeContractorApp
         {
             voertuigen_naam_pv = cbVoertuigen.Text;
             string query = "select merk from voertuigen where voertuig_naam=@voertuig_naam";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -303,7 +303,7 @@ namespace SafeContractorApp
         {
             opdrachtgevers_naam_pv = cbOpdrachtgever.Text;
             string query = "select gsm_nummer from opdrachtgevers where opdrachtgever_naam=@opdrachtgever_naam";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -323,7 +323,7 @@ namespace SafeContractorApp
         {
             site_naam_pv= cbSite.Text;
             string query = "select siteverantwoordelijke,gsm_nummer,noodnummer from sites where site_naam=@site_naam";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -347,7 +347,7 @@ namespace SafeContractorApp
         {
             int firma_id = GetIdFromTable("firma", "firma", Firma_naam_pv);
             string query = "update firma set firma_naam = @firma_naam where firma_id=@firma_id";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -363,7 +363,7 @@ namespace SafeContractorApp
         {
             int werknemer_id = GetIdFromTable("werknemers", "werknemer", weknemers_naam_pv);
             string query = "update werknemers set werknemer_naam =@werknemer_naam, datum_examen=@datum_examen, gsm_nummer=@gsm_nummer where werknemer_id=@werknemer_id";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -381,7 +381,7 @@ namespace SafeContractorApp
         {
             int voertuig_id = GetIdFromTable("voertuigen", "voertuig", voertuigen_naam_pv);
             string query = "update voertuigen set voertuig_naam =@voertuig_naam, merk=@merk where voertuig_id=@voertuig_id";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -398,7 +398,7 @@ namespace SafeContractorApp
         {
             int opdrachtgever_id = GetIdFromTable("opdrachtgevers", "opdrachtgever", opdrachtgevers_naam_pv);
             string query = "update opdrachtgevers set opdrachtgever_naam =@opdrachtgever_naam, gsm_nummer=@gsm_nummer where opdrachtgever_id=@opdrachtgever_id";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -415,7 +415,7 @@ namespace SafeContractorApp
         {
             int site_id = GetIdFromTable("sites", "site", site_naam_pv);
             string query = "update sites set site_naam=@site_naam, siteverantwoordelijke=@siteverantwoordelijke, gsm_nummer=@gsm_nummer, noodnummer=@noodnummer where site_id=@site_id";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);

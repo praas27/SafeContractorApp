@@ -18,7 +18,7 @@ namespace SafeContractorApp
         private void Load_opdrachtgever()
         {
             string query = "select opdrachtgever_naam from opdrachtgevers";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -36,7 +36,7 @@ namespace SafeContractorApp
         private void Load_site()
         {
             string query = "select site_naam from sites";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -54,7 +54,7 @@ namespace SafeContractorApp
         private void Load_voetuigen()
         {
             string query = "select voertuig_naam from voertuigen";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -72,7 +72,7 @@ namespace SafeContractorApp
         private void Load_werknemer()
         {
             string query = "select werknemer_naam from werknemers";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -90,7 +90,7 @@ namespace SafeContractorApp
         private void Load_firma()
         {
             string query = "select firma_naam from firma";
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -110,7 +110,7 @@ namespace SafeContractorApp
             int id = 0;
             string query = $"SELECT {columnName}_id FROM {tableName} WHERE {columnName}_naam = @value";
 
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
@@ -141,38 +141,95 @@ namespace SafeContractorApp
 
         private void btnSumit_Click(object sender, EventArgs e)
         {
-            int firma_id = GetIdFromTable("firma", "firma", cbFirma.Text);
-            int werknemer_id = GetIdFromTable("werknemers", "werknemer", cbWerknemer.Text);
-            int opdrachtgever_id = GetIdFromTable("opdrachtgevers", "opdrachtgever", cbOpdrachtgever.Text);
-            int voertuig_id = GetIdFromTable("voertuigen", "voertuig", cbVoertuigen.Text);
-            int site_id = GetIdFromTable("sites", "site", cbSite.Text);
-
-            string query = "INSERT INTO vergunning " +
-                "(firma_firma_id, werknemers_werknemer_id, opdrachtgevers_opdrachtgever_id, voertuigen_voertuig_id, sites_site_id," +
-                "start_datum, eind_datum, aantal_personen, korte_omschrijving, gedetaileerde_omschrijving, optie, extra_uitrustingen) " +
-                "VALUES " +
-                "(@firma_firma_id, @werknemers_werknemer_id, @opdrachtgevers_opdrachtgever_id, @voertuigen_voertuig_id, @sites_site_id," +
-                "@start_datum, @eind_datum, @aantal_personen, @korte_omschrijving, @gedetaileerde_omschrijving, @optie, @extra_uitrustingen)";
-
-            using (var connection = new MySqlConnection(Connection.user))
+            try
             {
-                connection.Open();
-                var command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@firma_firma_id", firma_id);
-                command.Parameters.AddWithValue("@werknemers_werknemer_id", werknemer_id);
-                command.Parameters.AddWithValue("@opdrachtgevers_opdrachtgever_id", opdrachtgever_id);
-                command.Parameters.AddWithValue("@voertuigen_voertuig_id", voertuig_id);
-                command.Parameters.AddWithValue("@sites_site_id", site_id);
-                command.Parameters.AddWithValue("@start_datum", dtpStart.Value);
-                command.Parameters.AddWithValue("@eind_datum", dtpStop.Value);
-                command.Parameters.AddWithValue("@aantal_personen", Convert.ToInt32(nupPersonen.Text));
-                command.Parameters.AddWithValue("@korte_omschrijving", tbKorte.Text);
-                command.Parameters.AddWithValue("@gedetaileerde_omschrijving", tbGetaileerde.Text);
-                command.Parameters.AddWithValue("@optie", tbToelatingen.Text);
-                command.Parameters.AddWithValue("@extra_uitrustingen", tbExtra.Text);
-                command.ExecuteNonQuery();
-                connection.Close();
+                int firma_id = GetIdFromTable("firma", "firma", cbFirma.Text);
+                int werknemer_id = GetIdFromTable("werknemers", "werknemer", cbWerknemer.Text);
+                int opdrachtgever_id = GetIdFromTable("opdrachtgevers", "opdrachtgever", cbOpdrachtgever.Text);
+                int voertuig_id = GetIdFromTable("voertuigen", "voertuig", cbVoertuigen.Text);
+                int site_id = GetIdFromTable("sites", "site", cbSite.Text);
 
+                string query = "INSERT INTO vergunning " +
+                    "(firma_firma_id, werknemers_werknemer_id, opdrachtgevers_opdrachtgever_id, voertuigen_voertuig_id, sites_site_id," +
+                    "start_datum, eind_datum, aantal_personen, korte_omschrijving, gedetaileerde_omschrijving, optie, extra_uitrustingen) " +
+                    "VALUES " +
+                    "(@firma_firma_id, @werknemers_werknemer_id, @opdrachtgevers_opdrachtgever_id, @voertuigen_voertuig_id, @sites_site_id," +
+                    "@start_datum, @eind_datum, @aantal_personen, @korte_omschrijving, @gedetaileerde_omschrijving, @optie, @extra_uitrustingen)";
+
+                using (var connection = new MySqlConnection(Globaal.user))
+                {
+                    connection.Open();
+                    var command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@firma_firma_id", firma_id);
+                    command.Parameters.AddWithValue("@werknemers_werknemer_id", werknemer_id);
+                    command.Parameters.AddWithValue("@opdrachtgevers_opdrachtgever_id", opdrachtgever_id);
+                    command.Parameters.AddWithValue("@voertuigen_voertuig_id", voertuig_id);
+                    command.Parameters.AddWithValue("@sites_site_id", site_id);
+                    command.Parameters.AddWithValue("@start_datum", dtpStart.Value);
+                    command.Parameters.AddWithValue("@eind_datum", dtpStop.Value);
+                    command.Parameters.AddWithValue("@aantal_personen", Convert.ToInt32(nupPersonen.Text));
+                    command.Parameters.AddWithValue("@korte_omschrijving", tbKorte.Text);
+                    command.Parameters.AddWithValue("@gedetaileerde_omschrijving", tbGetaileerde.Text);
+                    command.Parameters.AddWithValue("@optie", tbToelatingen.Text);
+                    command.Parameters.AddWithValue("@extra_uitrustingen", tbExtra.Text);
+                    command.ExecuteNonQuery();
+                    connection.Close(); 
+                }
+
+                int id = 0;
+                query = "SELECT vegunning_id FROM vergunning ORDER BY vegunning_id DESC LIMIT 1;";
+                using (var connection = new MySqlConnection(Globaal.user))
+                {
+                    connection.Open();
+                    var command = new MySqlCommand(query, connection);
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        id = int.Parse(reader["vegunning_id"].ToString());
+                    }
+                    connection.Close();
+                }
+
+                if (chbVuurvergunning.Checked)
+                {
+                    query = "update vergunning set vuurvergunning_vuurvergunning_id = @vuurvergunning_vuurvergunning_id where vegunning_id=@vegunning_id";
+                    using (var connection = new MySqlConnection(Globaal.user))
+                    {
+                        connection.Open();
+                        var command = new MySqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@vuurvergunning_vuurvergunning_id", Globaal.vuurId);
+                        command.Parameters.AddWithValue("@vegunning_id", id);
+                        MySqlDataReader reader = command.ExecuteReader();
+                        connection.Close();
+                    }
+                }
+                if (chbOpenvergunning.Checked)
+                {
+                    query = "update vergunning set open_vergunning_open_vergunning_id = @open_vergunning_open_vergunning_id where vegunning_id=@vegunning_id";
+                    using (var connection = new MySqlConnection(Globaal.user))
+                    {
+                        connection.Open();
+                        var command = new MySqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@open_vergunning_open_vergunning_id", Globaal.openId);
+                        command.Parameters.AddWithValue("@vegunning_id", id);
+                        MySqlDataReader reader = command.ExecuteReader();
+                        connection.Close();
+                    }
+                }
+                if (chbBeslotenvergunning.Checked)
+                {
+                    query = "update vergunning set besloten_vergunning_besloten_vergunning_id = @besloten_vergunning_besloten_vergunning_id where vegunning_id=@vegunning_id";
+                    using (var connection = new MySqlConnection(Globaal.user))
+                    {
+                        connection.Open();
+                        var command = new MySqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@besloten_vergunning_besloten_vergunning_id", Globaal.sluitId);
+                        command.Parameters.AddWithValue("@vegunning_id", id);
+                        MySqlDataReader reader = command.ExecuteReader();
+                        connection.Close();
+                    }
+                }
                 cbFirma.Text = string.Empty;
                 cbWerknemer.Text = string.Empty;
                 cbOpdrachtgever.Text = string.Empty;
@@ -186,14 +243,33 @@ namespace SafeContractorApp
                 tbToelatingen.Text = string.Empty;
                 tbExtra.Text = string.Empty;
             }
+            catch { }
+            
         }
 
         private void chbVuurvergunning_CheckedChanged(object sender, EventArgs e)
         {
             if (chbVuurvergunning.Checked)
             {
-                VuurVariablen.opdrachtgever = "Naam van de uitvoerde: " + cbOpdrachtgever.Text;
                 Vuurvergunning ss = new Vuurvergunning();
+                ss.Show();
+            }
+        }
+
+        private void chbBeslotenvergunning_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbBeslotenvergunning.Checked)
+            {
+                Beslotenvergunning ss = new Beslotenvergunning();
+                ss.Show();
+            }
+        }
+
+        private void chbOpenvergunning_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbOpenvergunning.Checked)
+            {
+                Openvergunning ss = new Openvergunning();
                 ss.Show();
             }
         }

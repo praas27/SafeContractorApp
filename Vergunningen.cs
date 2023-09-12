@@ -15,9 +15,9 @@ namespace SafeContractorApp
     {
         private void LoadVergunningData()
         {
-            string query = "SELECT * FROM vergunning";
+            string query = "SELECT * FROM vergunning ORDER BY vegunning_id DESC;";
 
-            using (var connection = new MySqlConnection(Connection.user))
+            using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
