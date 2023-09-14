@@ -35,5 +35,12 @@ namespace SafeContractorApp
             InitializeComponent();
             LoadVergunningData();
         }
+
+        private void btnPDF_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = dgvVergunning.SelectedRows[0];
+            int id = int.Parse(selectedRow.Cells[0].Value.ToString());
+            PdfVergunning.GenDoc(id);
+        }
     }
 }
