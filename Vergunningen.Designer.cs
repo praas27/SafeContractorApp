@@ -47,7 +47,7 @@
             this.btnPDF.Name = "btnPDF";
             this.btnPDF.Size = new System.Drawing.Size(75, 23);
             this.btnPDF.TabIndex = 1;
-            this.btnPDF.Text = "button1";
+            this.btnPDF.Text = "Print";
             this.btnPDF.UseVisualStyleBackColor = true;
             this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
             // 

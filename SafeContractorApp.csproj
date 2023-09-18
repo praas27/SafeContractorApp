@@ -147,6 +147,8 @@
     <Compile Include="Openvergunning.Designer.cs">
       <DependentUpon>Openvergunning.cs</DependentUpon>
     </Compile>
+    <Compile Include="PdfBeslotenvergunning.cs" />
+    <Compile Include="PdfOpenvergunning.cs" />
     <Compile Include="PdfVergunning.cs" />
     <Compile Include="PdfVuurvergunning.cs" />
     <Compile Include="Program.cs" />
@@ -204,6 +206,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="AadVergunningen.resx">
       <DependentUpon>AadVergunningen.cs</DependentUpon>
@@ -230,16 +233,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Recources\belgium.png" />
-    <Content Include="Recources\first-aid.png" />
-    <Content Include="Recources\france.png" />
-    <Content Include="Recources\germany.png" />
-    <Content Include="Recources\logo.png" />
-    <Content Include="Recources\parking.png" />
-    <Content Include="Recources\telephone.png" />
-    <Content Include="Recources\united-kingdom.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

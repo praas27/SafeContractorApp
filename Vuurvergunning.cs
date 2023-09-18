@@ -82,26 +82,22 @@ namespace SafeContractorApp
 
         private void cbAard_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbxAard.Items.Add(cbAard.Text);
-            lbxAardP.Items.Add(tbAard.Text);
+            
         }
 
         private void cbInstallatie_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbxInstallatie.Items.Add(cbInstallatie.Text);
-            lbxInstallatieP.Items.Add(tbIstallatie.Text);
+            
         }
 
         private void cbOmgeving_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbxOmpgeving.Items.Add(cbOmgeving.Text);
-            lbxOmpgevingP.Items.Add(tbOmgeving.Text);
+           
         }
 
         private void cbBrand_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbxBrand.Items.Add(cbBrand.Text);
-            lbxBrandP.Items.Add(tbBrand.Text);
+            
         }
 
         private void btnSumit_Click(object sender, EventArgs e)
@@ -202,6 +198,30 @@ namespace SafeContractorApp
             //}
             //catch { }
             
+        }
+
+        private void btnA_Click(object sender, EventArgs e)
+        {
+            lbxAard.Items.Add(cbAard.Text);
+            lbxAardP.Items.Add(tbAard.Text);
+        }
+
+        private void btnI_Click(object sender, EventArgs e)
+        {
+            lbxInstallatie.Items.Add(cbInstallatie.Text);
+            lbxInstallatieP.Items.Add(tbIstallatie.Text);
+        }
+
+        private void brnO_Click(object sender, EventArgs e)
+        {
+            lbxOmpgeving.Items.Add(cbOmgeving.Text);
+            lbxOmpgevingP.Items.Add(tbOmgeving.Text);
+        }
+
+        private void btnB_Click(object sender, EventArgs e)
+        {
+            lbxBrand.Items.Add(cbBrand.Text);
+            lbxBrandP.Items.Add(tbBrand.Text);
         }
     }
 }

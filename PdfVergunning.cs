@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -99,6 +101,7 @@ namespace SafeContractorApp
                     werknemer_naam = reader["werknemer_naam"].ToString();
                     datum_examen = reader["datum_examen"].ToString().Substring(0,10);
                     gsm_nummer_werknemer = reader["gsm_nummer"].ToString();
+                    Globaal.uitvoerder = werknemer_naam;
                 }
                 connection.Close();
             }
@@ -149,6 +152,7 @@ namespace SafeContractorApp
                     siteverantwoordelijke = reader["siteverantwoordelijke"].ToString();
                     gsm_nummer_site = reader["gsm_nummer"].ToString();
                     noodnummer = reader["noodnummer"].ToString();
+                    Globaal.noodnummer = noodnummer;
                 }
                 connection.Close();
             }
@@ -162,19 +166,17 @@ namespace SafeContractorApp
             XFont titele = new XFont("Calibri", 25);
             XFont font_antw = new XFont("Calibri", 11);
             XFont font_sub = new XFont("Calibri", 11, XFontStyle.Bold);
-            XFont font3 = new XFont("Calibri", 12);
             XFont font_Titel = new XFont("Calibri", 20, XFontStyle.Bold);
-            XFont font5 = new XFont("Bodoni MT", 11);
             XPen line = new XPen(XColors.Black, 0.5);
 
-            XImage logo = XImage.FromFile(@"C:\Users\praas\Documenten\KioTech\SafeContractorApp\Recources\logo.png");
-            XImage belgium = XImage.FromFile(@"C:\Users\praas\Documenten\KioTech\SafeContractorApp\Recources\belgium.png");
-            XImage france = XImage.FromFile(@"C:\Users\praas\Documenten\KioTech\SafeContractorApp\Recources\france.png");
-            XImage germany = XImage.FromFile(@"C:\Users\praas\Documenten\KioTech\SafeContractorApp\Recources\germany.png");
-            XImage uk = XImage.FromFile(@"C:\Users\praas\Documenten\KioTech\SafeContractorApp\Recources\united-kingdom.png");
-            XImage parking = XImage.FromFile(@"C:\Users\praas\Documenten\KioTech\SafeContractorApp\Recources\parking.png");
-            XImage telephone = XImage.FromFile(@"C:\Users\praas\Documenten\KioTech\SafeContractorApp\Recources\telephone.png");
-            XImage aid = XImage.FromFile(@"C:\Users\praas\Documenten\KioTech\SafeContractorApp\Recources\first-aid.png");
+            XImage logo = XImage.FromFile($@"{Properties.Settings.Default.Images}\logo.png");
+            XImage belgium = XImage.FromFile($@"{Properties.Settings.Default.Images}\belgium.png");
+            XImage france = XImage.FromFile($@"{Properties.Settings.Default.Images}\france.png");
+            XImage germany = XImage.FromFile($@"{Properties.Settings.Default.Images}\germany.png");
+            XImage uk = XImage.FromFile($@"{Properties.Settings.Default.Images}\united-kingdom.png");
+            XImage parking = XImage.FromFile($@"{Properties.Settings.Default.Images}\parking.png");
+            XImage telephone = XImage.FromFile($@"{Properties.Settings.Default.Images}\telephone.png");
+            XImage aid = XImage.FromFile($@"{Properties.Settings.Default.Images}\first-aid.png");
 
             gfx.DrawString("DESOTEC WERKVERGUNNING", titele, XBrushes.Black, marge, 50);
             gfx.DrawImage(logo, new XRect(400, -5,logo.Width/6, logo.Height/6));
@@ -230,9 +232,28 @@ namespace SafeContractorApp
             gfx.DrawString("Extra uitrustngen: ", font_sub, XBrushes.Black, marge,540);
             gfx.DrawString("Gedetailleerde Omschrijving", font_sub, XBrushes.Black, marge,640);
 
-            gfx.DrawString(optie, font_antw, XBrushes.Black, marge, 450);
-            gfx.DrawString(extra_uitrustingen, font_antw, XBrushes.Black, marge, 550);
-            gfx.DrawString(gedetaileerde_omschrijving, font_antw, XBrushes.Black, marge, 650);
+
+            string[] mogelijk = Globaal.FormatText(optie, font_antw, marge);
+            int mogelijkStart = 460;
+            for (int i = 0; i < mogelijk.Length; i++)
+            {
+                gfx.DrawString(mogelijk[i], font_antw, XBrushes.Black, marge, mogelijkStart);
+                mogelijkStart= mogelijkStart + 10;
+            }
+            string[] extra = Globaal.FormatText(extra_uitrustingen, font_antw, marge);
+            int extraStart = 560;
+            for (int i = 0;i < extra.Length;i++)
+            {
+                gfx.DrawString(extra[i], font_antw, XBrushes.Black, marge, extraStart);
+                extraStart= extraStart + 10;
+            }
+            string[] omscheijving = Globaal.FormatText(gedetaileerde_omschrijving, font_antw, marge);
+            int omscheijvingStart = 660;
+            for (int i = 0; i<omscheijving.Length; i++) 
+            {
+                gfx.DrawString(omscheijving[i], font_antw, XBrushes.Black, marge, omscheijvingStart);
+                omscheijvingStart = omscheijvingStart + 10;
+            }
 
             gfx.DrawString("Handtekening opdrachtgever:", font_sub, XBrushes.Black, marge, 750);
             gfx.DrawString("Handtekening uitvoerder:", font_sub, XBrushes.Black, marge+170, 750);
@@ -282,7 +303,7 @@ namespace SafeContractorApp
             gfx2.DrawString(gsm_nummer_opdrachtgever, font_antw, XBrushes.Black, 250, 215);
             gfx2.DrawString(opdrachtgever_naam, font_antw, XBrushes.Black, 250, 225);
             gfx2.DrawString(site_naam, font_antw, XBrushes.Black, 260, 270);
-            gfx2.DrawString(noodnummer, font_Titel, XBrushes.Red, 260, 290);
+            gfx2.DrawString(gsm_nummer_site, font_Titel, XBrushes.Red, 260, 290);
 
             gfx2.DrawString("1. Het voertuig dient binnen de aangeduide perkeervakken te worden", font_antw, XBrushes.Black, 125, 330);
             gfx2.DrawString("   geplaatst.", font_antw, XBrushes.Black, 125, 340);

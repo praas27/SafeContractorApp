@@ -43,7 +43,7 @@
             this.cbMetingen = new System.Windows.Forms.ComboBox();
             this.cbMaatregel = new System.Windows.Forms.ComboBox();
             this.cbRisico = new System.Windows.Forms.ComboBox();
-            this.cbBeschermings = new System.Windows.Forms.ComboBox();
+            this.cbBescherm = new System.Windows.Forms.ComboBox();
             this.tbMetingen = new System.Windows.Forms.TextBox();
             this.tbMaatregel = new System.Windows.Forms.TextBox();
             this.lsbMeting = new System.Windows.Forms.ListBox();
@@ -55,11 +55,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbBescherm = new System.Windows.Forms.Label();
+            this.label100 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lsbMaatregelParaaf = new System.Windows.Forms.ListBox();
             this.lsbMetingParaaf = new System.Windows.Forms.ListBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnMetingen = new System.Windows.Forms.Button();
+            this.btnMaat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label9
@@ -168,7 +170,6 @@
             this.cbMetingen.Name = "cbMetingen";
             this.cbMetingen.Size = new System.Drawing.Size(144, 21);
             this.cbMetingen.TabIndex = 58;
-            this.cbMetingen.SelectedIndexChanged += new System.EventHandler(this.cbMetingen_SelectedIndexChanged);
             // 
             // cbMaatregel
             // 
@@ -177,7 +178,6 @@
             this.cbMaatregel.Name = "cbMaatregel";
             this.cbMaatregel.Size = new System.Drawing.Size(366, 21);
             this.cbMaatregel.TabIndex = 61;
-            this.cbMaatregel.SelectedIndexChanged += new System.EventHandler(this.cbMaatregel_SelectedIndexChanged);
             // 
             // cbRisico
             // 
@@ -188,14 +188,14 @@
             this.cbRisico.TabIndex = 62;
             this.cbRisico.SelectedIndexChanged += new System.EventHandler(this.cbRisico_SelectedIndexChanged);
             // 
-            // cbBeschermings
+            // cbBescherm
             // 
-            this.cbBeschermings.FormattingEnabled = true;
-            this.cbBeschermings.Location = new System.Drawing.Point(312, 120);
-            this.cbBeschermings.Name = "cbBeschermings";
-            this.cbBeschermings.Size = new System.Drawing.Size(144, 21);
-            this.cbBeschermings.TabIndex = 63;
-            this.cbBeschermings.SelectedIndexChanged += new System.EventHandler(this.cbBeschermings_SelectedIndexChanged);
+            this.cbBescherm.FormattingEnabled = true;
+            this.cbBescherm.Location = new System.Drawing.Point(312, 120);
+            this.cbBescherm.Name = "cbBescherm";
+            this.cbBescherm.Size = new System.Drawing.Size(144, 21);
+            this.cbBescherm.TabIndex = 63;
+            this.cbBescherm.SelectedIndexChanged += new System.EventHandler(this.cbBescherm_SelectedIndexChanged);
             // 
             // tbMetingen
             // 
@@ -203,7 +203,6 @@
             this.tbMetingen.Name = "tbMetingen";
             this.tbMetingen.Size = new System.Drawing.Size(144, 20);
             this.tbMetingen.TabIndex = 64;
-            this.tbMetingen.Enter += new System.EventHandler(this.tbMetingen_Enter);
             // 
             // tbMaatregel
             // 
@@ -211,12 +210,11 @@
             this.tbMaatregel.Name = "tbMaatregel";
             this.tbMaatregel.Size = new System.Drawing.Size(366, 20);
             this.tbMaatregel.TabIndex = 65;
-            this.tbMaatregel.Enter += new System.EventHandler(this.tbMaatregel_Enter);
             // 
             // lsbMeting
             // 
             this.lsbMeting.FormattingEnabled = true;
-            this.lsbMeting.Location = new System.Drawing.Point(13, 175);
+            this.lsbMeting.Location = new System.Drawing.Point(14, 201);
             this.lsbMeting.Name = "lsbMeting";
             this.lsbMeting.Size = new System.Drawing.Size(143, 212);
             this.lsbMeting.TabIndex = 66;
@@ -224,7 +222,7 @@
             // lsbRisico
             // 
             this.lsbRisico.FormattingEnabled = true;
-            this.lsbRisico.Location = new System.Drawing.Point(163, 175);
+            this.lsbRisico.Location = new System.Drawing.Point(164, 201);
             this.lsbRisico.Name = "lsbRisico";
             this.lsbRisico.Size = new System.Drawing.Size(143, 212);
             this.lsbRisico.TabIndex = 68;
@@ -232,7 +230,7 @@
             // lsbBescherm
             // 
             this.lsbBescherm.FormattingEnabled = true;
-            this.lsbBescherm.Location = new System.Drawing.Point(313, 174);
+            this.lsbBescherm.Location = new System.Drawing.Point(313, 201);
             this.lsbBescherm.Name = "lsbBescherm";
             this.lsbBescherm.Size = new System.Drawing.Size(143, 212);
             this.lsbBescherm.TabIndex = 69;
@@ -240,14 +238,14 @@
             // lsbMaatregelen
             // 
             this.lsbMaatregelen.FormattingEnabled = true;
-            this.lsbMaatregelen.Location = new System.Drawing.Point(462, 175);
+            this.lsbMaatregelen.Location = new System.Drawing.Point(462, 201);
             this.lsbMaatregelen.Name = "lsbMaatregelen";
             this.lsbMaatregelen.Size = new System.Drawing.Size(366, 212);
             this.lsbMaatregelen.TabIndex = 70;
             // 
             // tbWerkbeschrjving
             // 
-            this.tbWerkbeschrjving.Location = new System.Drawing.Point(163, 422);
+            this.tbWerkbeschrjving.Location = new System.Drawing.Point(162, 435);
             this.tbWerkbeschrjving.Multiline = true;
             this.tbWerkbeschrjving.Name = "tbWerkbeschrjving";
             this.tbWerkbeschrjving.Size = new System.Drawing.Size(292, 144);
@@ -255,7 +253,7 @@
             // 
             // btnOpslaan
             // 
-            this.btnOpslaan.Location = new System.Drawing.Point(267, 569);
+            this.btnOpslaan.Location = new System.Drawing.Point(266, 582);
             this.btnOpslaan.Name = "btnOpslaan";
             this.btnOpslaan.Size = new System.Drawing.Size(75, 23);
             this.btnOpslaan.TabIndex = 73;
@@ -266,7 +264,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(162, 406);
+            this.label1.Location = new System.Drawing.Point(161, 419);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 74;
@@ -289,14 +287,14 @@
             this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 76;
             // 
-            // cbBescherm
+            // label100
             // 
-            this.cbBescherm.AutoSize = true;
-            this.cbBescherm.Location = new System.Drawing.Point(321, 104);
-            this.cbBescherm.Name = "cbBescherm";
-            this.cbBescherm.Size = new System.Drawing.Size(115, 13);
-            this.cbBescherm.TabIndex = 77;
-            this.cbBescherm.Text = "Beschermingsmiddelen";
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(321, 104);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(115, 13);
+            this.label100.TabIndex = 77;
+            this.label100.Text = "Beschermingsmiddelen";
             // 
             // label11
             // 
@@ -310,17 +308,17 @@
             // lsbMaatregelParaaf
             // 
             this.lsbMaatregelParaaf.FormattingEnabled = true;
-            this.lsbMaatregelParaaf.Location = new System.Drawing.Point(461, 393);
+            this.lsbMaatregelParaaf.Location = new System.Drawing.Point(461, 419);
             this.lsbMaatregelParaaf.Name = "lsbMaatregelParaaf";
-            this.lsbMaatregelParaaf.Size = new System.Drawing.Size(366, 199);
+            this.lsbMaatregelParaaf.Size = new System.Drawing.Size(366, 173);
             this.lsbMaatregelParaaf.TabIndex = 79;
             // 
             // lsbMetingParaaf
             // 
             this.lsbMetingParaaf.FormattingEnabled = true;
-            this.lsbMetingParaaf.Location = new System.Drawing.Point(14, 393);
+            this.lsbMetingParaaf.Location = new System.Drawing.Point(14, 419);
             this.lsbMetingParaaf.Name = "lsbMetingParaaf";
-            this.lsbMetingParaaf.Size = new System.Drawing.Size(143, 199);
+            this.lsbMetingParaaf.Size = new System.Drawing.Size(143, 173);
             this.lsbMetingParaaf.TabIndex = 80;
             // 
             // label12
@@ -332,16 +330,38 @@
             this.label12.TabIndex = 81;
             this.label12.Text = "Risico";
             // 
+            // btnMetingen
+            // 
+            this.btnMetingen.Location = new System.Drawing.Point(40, 174);
+            this.btnMetingen.Name = "btnMetingen";
+            this.btnMetingen.Size = new System.Drawing.Size(75, 23);
+            this.btnMetingen.TabIndex = 82;
+            this.btnMetingen.Text = "Add";
+            this.btnMetingen.UseVisualStyleBackColor = true;
+            this.btnMetingen.Click += new System.EventHandler(this.btnMetingen_Click);
+            // 
+            // btnMaat
+            // 
+            this.btnMaat.Location = new System.Drawing.Point(595, 174);
+            this.btnMaat.Name = "btnMaat";
+            this.btnMaat.Size = new System.Drawing.Size(75, 23);
+            this.btnMaat.TabIndex = 85;
+            this.btnMaat.Text = "Add";
+            this.btnMaat.UseVisualStyleBackColor = true;
+            this.btnMaat.Click += new System.EventHandler(this.btnMaat_Click);
+            // 
             // Beslotenvergunning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 608);
+            this.Controls.Add(this.btnMaat);
+            this.Controls.Add(this.btnMetingen);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lsbMetingParaaf);
             this.Controls.Add(this.lsbMaatregelParaaf);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.cbBescherm);
+            this.Controls.Add(this.label100);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -353,7 +373,7 @@
             this.Controls.Add(this.lsbMeting);
             this.Controls.Add(this.tbMaatregel);
             this.Controls.Add(this.tbMetingen);
-            this.Controls.Add(this.cbBeschermings);
+            this.Controls.Add(this.cbBescherm);
             this.Controls.Add(this.cbRisico);
             this.Controls.Add(this.cbMaatregel);
             this.Controls.Add(this.cbMetingen);
@@ -393,7 +413,7 @@
         private System.Windows.Forms.ComboBox cbMetingen;
         private System.Windows.Forms.ComboBox cbMaatregel;
         private System.Windows.Forms.ComboBox cbRisico;
-        private System.Windows.Forms.ComboBox cbBeschermings;
+        private System.Windows.Forms.ComboBox cbBescherm;
         private System.Windows.Forms.TextBox tbMetingen;
         private System.Windows.Forms.TextBox tbMaatregel;
         private System.Windows.Forms.ListBox lsbMeting;
@@ -405,10 +425,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label cbBescherm;
+        private System.Windows.Forms.Label label100;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ListBox lsbMaatregelParaaf;
         private System.Windows.Forms.ListBox lsbMetingParaaf;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnMetingen;
+        private System.Windows.Forms.Button btnMaat;
     }
 }

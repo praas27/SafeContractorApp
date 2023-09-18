@@ -61,6 +61,10 @@
             this.tbIstallatie = new System.Windows.Forms.TextBox();
             this.tbOmgeving = new System.Windows.Forms.TextBox();
             this.tbBrand = new System.Windows.Forms.TextBox();
+            this.btnA = new System.Windows.Forms.Button();
+            this.btnI = new System.Windows.Forms.Button();
+            this.brnO = new System.Windows.Forms.Button();
+            this.btnB = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mySqlDataAdapter1
@@ -341,11 +345,55 @@
             this.tbBrand.Size = new System.Drawing.Size(182, 57);
             this.tbBrand.TabIndex = 53;
             // 
+            // btnA
+            // 
+            this.btnA.Location = new System.Drawing.Point(200, 147);
+            this.btnA.Name = "btnA";
+            this.btnA.Size = new System.Drawing.Size(24, 23);
+            this.btnA.TabIndex = 54;
+            this.btnA.Text = "+";
+            this.btnA.UseVisualStyleBackColor = true;
+            this.btnA.Click += new System.EventHandler(this.btnA_Click);
+            // 
+            // btnI
+            // 
+            this.btnI.Location = new System.Drawing.Point(403, 147);
+            this.btnI.Name = "btnI";
+            this.btnI.Size = new System.Drawing.Size(24, 23);
+            this.btnI.TabIndex = 55;
+            this.btnI.Text = "+";
+            this.btnI.UseVisualStyleBackColor = true;
+            this.btnI.Click += new System.EventHandler(this.btnI_Click);
+            // 
+            // brnO
+            // 
+            this.brnO.Location = new System.Drawing.Point(605, 147);
+            this.brnO.Name = "brnO";
+            this.brnO.Size = new System.Drawing.Size(24, 23);
+            this.brnO.TabIndex = 56;
+            this.brnO.Text = "+";
+            this.brnO.UseVisualStyleBackColor = true;
+            this.brnO.Click += new System.EventHandler(this.brnO_Click);
+            // 
+            // btnB
+            // 
+            this.btnB.Location = new System.Drawing.Point(804, 147);
+            this.btnB.Name = "btnB";
+            this.btnB.Size = new System.Drawing.Size(24, 23);
+            this.btnB.TabIndex = 57;
+            this.btnB.Text = "+";
+            this.btnB.UseVisualStyleBackColor = true;
+            this.btnB.Click += new System.EventHandler(this.btnB_Click);
+            // 
             // Vuurvergunning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 608);
+            this.Controls.Add(this.btnB);
+            this.Controls.Add(this.brnO);
+            this.Controls.Add(this.btnI);
+            this.Controls.Add(this.btnA);
             this.Controls.Add(this.tbBrand);
             this.Controls.Add(this.tbOmgeving);
             this.Controls.Add(this.tbIstallatie);
@@ -420,5 +468,9 @@
         private System.Windows.Forms.TextBox tbIstallatie;
         private System.Windows.Forms.TextBox tbOmgeving;
         private System.Windows.Forms.TextBox tbBrand;
+        private System.Windows.Forms.Button btnA;
+        private System.Windows.Forms.Button btnI;
+        private System.Windows.Forms.Button brnO;
+        private System.Windows.Forms.Button btnB;
     }
 }

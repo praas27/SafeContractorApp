@@ -58,5 +58,17 @@ namespace SafeContractorApp.Properties {
                 this["database"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Images {
+            get {
+                return ((string)(this["Images"]));
+            }
+            set {
+                this["Images"] = value;
+            }
+        }
     }
 }

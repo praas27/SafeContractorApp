@@ -31,6 +31,9 @@
             this.btnPath = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tbPath = new System.Windows.Forms.TextBox();
+            this.btnImages = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbImages = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnPath
@@ -59,12 +62,41 @@
             this.tbPath.Size = new System.Drawing.Size(542, 20);
             this.tbPath.TabIndex = 16;
             // 
+            // btnImages
+            // 
+            this.btnImages.Location = new System.Drawing.Point(646, 379);
+            this.btnImages.Name = "btnImages";
+            this.btnImages.Size = new System.Drawing.Size(22, 23);
+            this.btnImages.TabIndex = 21;
+            this.btnImages.Text = "...";
+            this.btnImages.UseVisualStyleBackColor = true;
+            this.btnImages.Click += new System.EventHandler(this.btnImages_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(90, 366);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(124, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Path naar Images locatie";
+            // 
+            // tbImages
+            // 
+            this.tbImages.Location = new System.Drawing.Point(93, 382);
+            this.tbImages.Name = "tbImages";
+            this.tbImages.Size = new System.Drawing.Size(542, 20);
+            this.tbImages.TabIndex = 19;
+            // 
             // Installingen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(816, 527);
+            this.Controls.Add(this.btnImages);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbImages);
             this.Controls.Add(this.btnPath);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbPath);
@@ -81,5 +113,8 @@
         private System.Windows.Forms.Button btnPath;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbPath;
+        private System.Windows.Forms.Button btnImages;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbImages;
     }
 }

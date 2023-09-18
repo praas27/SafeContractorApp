@@ -24,13 +24,13 @@ namespace SafeContractorApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string connectionString = "server=127.0.0.1;database=safecontractorappdb_4;uid=root;pwd=lijn-applications_29_08_2023;";
+            //string connectionString = "server=127.0.0.1;database=safecontractorappdb_4;uid=root;pwd=lijn-applications_29_08_2023;";
             string server = tbHost.Text;
             string database = tbDatabase.Text;
             string username = tbUsername.Text;
             string password = tbPassword.Text;
 
-            //string connectionString = $"Server={server};Database={database};User ID={username};Password={password};";
+            string connectionString = $"Server={server};Database={database};User ID={username};Password={password};";
 
             try
             {

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -80,7 +81,7 @@ namespace SafeContractorApp
                 while (reader.Read())
                 {
                     string beschermiddelen = reader["beschermiddelen"].ToString();
-                    cbBeschermings.Items.Add(beschermiddelen);
+                    cbBescherm.Items.Add(beschermiddelen);
                 }
                 connection.Close();
             }
@@ -173,38 +174,6 @@ namespace SafeContractorApp
             Load_besloten_maatregelen();
             Load_meting();
             Load_risico();
-        }
-
-        private void cbMetingen_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            lsbMeting.Items.Add(cbMetingen.Text);
-            lsbMetingParaaf.Items.Add(tbMetingen.Text);
-        }
-
-        private void cbRisico_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            lsbRisico.Items.Add(cbRisico.Text);
-        }
-
-        private void cbMaatregel_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            lsbMaatregelen.Items.Add(cbMaatregel.Text);
-            lsbMaatregelParaaf.Items.Add(tbMaatregel.Text);
-        }
-
-        private void cbBeschermings_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            lsbBescherm.Items.Add(cbBescherm.Text);
-        }
-
-        private void tbMetingen_Enter(object sender, EventArgs e)
-        {
-            //lsbMetingParaaf.Items[lsbMeting.Items.Count-1] = tbMetingen.Text;
-        }
-
-        private void tbMaatregel_Enter(object sender, EventArgs e)
-        {
-            //lsbMaatregelen.Items[lsbMaatregelen.Items.Count - 1] = tbMaatregel.Text;
         }
 
         private void btnOpslaan_Click(object sender, EventArgs e)
@@ -321,6 +290,27 @@ namespace SafeContractorApp
                 this.Close();
             }
             catch { }
+        }
+
+        private void btnMetingen_Click(object sender, EventArgs e)
+        {
+            lsbMeting.Items.Add(cbMetingen.Text);
+            lsbMetingParaaf.Items.Add(tbMetingen.Text);
+        }
+        private void btnMaat_Click(object sender, EventArgs e)
+        {
+            lsbMaatregelen.Items.Add(cbMaatregel.Text);
+            lsbMaatregelParaaf.Items.Add(tbMaatregel.Text);
+        }
+
+        private void cbRisico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lsbRisico.Items.Add(cbRisico.Text);
+        }
+
+        private void cbBescherm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lsbBescherm.Items.Add(cbBescherm.Text);
         }
     }
 }

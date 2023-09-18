@@ -1,5 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Utilities.Collections;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,6 +43,21 @@ namespace SafeContractorApp
             DataGridViewRow selectedRow = dgvVergunning.SelectedRows[0];
             int id = int.Parse(selectedRow.Cells[0].Value.ToString());
             PdfVergunning.GenDoc(id);
+            try
+            {
+                PdfVuurvergunning.GenDoc(id);
+            }
+            catch { }
+            try
+            {
+                PdfOpenvergunning.GenDoc(id);
+            }
+            catch { }
+            try
+            {
+                PdfBeslotenvergunning.GenDoc(id);
+            }catch { }
+            
         }
     }
 }

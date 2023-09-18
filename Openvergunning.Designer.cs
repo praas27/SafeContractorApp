@@ -51,14 +51,11 @@
             this.cbMaatregelen = new System.Windows.Forms.ComboBox();
             this.tbExtra = new System.Windows.Forms.TextBox();
             this.tbAdd = new System.Windows.Forms.Button();
-            this.cbAntwoord = new System.Windows.Forms.ComboBox();
             this.lsbMaatregelen = new System.Windows.Forms.ListBox();
             this.btnOpslaan = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.lsbParaaf = new System.Windows.Forms.ListBox();
-            this.lsbAntwoord = new System.Windows.Forms.ListBox();
             this.tbWerkbeschrijving = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -256,12 +253,12 @@
             // 
             this.tbExtra.Location = new System.Drawing.Point(96, 221);
             this.tbExtra.Name = "tbExtra";
-            this.tbExtra.Size = new System.Drawing.Size(255, 20);
+            this.tbExtra.Size = new System.Drawing.Size(571, 20);
             this.tbExtra.TabIndex = 81;
             // 
             // tbAdd
             // 
-            this.tbAdd.Location = new System.Drawing.Point(732, 216);
+            this.tbAdd.Location = new System.Drawing.Point(731, 218);
             this.tbAdd.Name = "tbAdd";
             this.tbAdd.Size = new System.Drawing.Size(75, 23);
             this.tbAdd.TabIndex = 82;
@@ -269,24 +266,12 @@
             this.tbAdd.UseVisualStyleBackColor = true;
             this.tbAdd.Click += new System.EventHandler(this.tbAdd_Click);
             // 
-            // cbAntwoord
-            // 
-            this.cbAntwoord.FormattingEnabled = true;
-            this.cbAntwoord.Items.AddRange(new object[] {
-            "J",
-            "T",
-            "N"});
-            this.cbAntwoord.Location = new System.Drawing.Point(527, 221);
-            this.cbAntwoord.Name = "cbAntwoord";
-            this.cbAntwoord.Size = new System.Drawing.Size(121, 21);
-            this.cbAntwoord.TabIndex = 83;
-            // 
             // lsbMaatregelen
             // 
             this.lsbMaatregelen.FormattingEnabled = true;
             this.lsbMaatregelen.Location = new System.Drawing.Point(28, 248);
             this.lsbMaatregelen.Name = "lsbMaatregelen";
-            this.lsbMaatregelen.Size = new System.Drawing.Size(370, 303);
+            this.lsbMaatregelen.Size = new System.Drawing.Size(448, 303);
             this.lsbMaatregelen.TabIndex = 84;
             // 
             // btnOpslaan
@@ -317,30 +302,13 @@
             this.label11.TabIndex = 86;
             this.label11.Text = "Maatregelen";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(401, 226);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(52, 13);
-            this.label12.TabIndex = 88;
-            this.label12.Text = "Antwoord";
-            // 
             // lsbParaaf
             // 
             this.lsbParaaf.FormattingEnabled = true;
-            this.lsbParaaf.Location = new System.Drawing.Point(404, 248);
+            this.lsbParaaf.Location = new System.Drawing.Point(482, 247);
             this.lsbParaaf.Name = "lsbParaaf";
-            this.lsbParaaf.Size = new System.Drawing.Size(310, 303);
+            this.lsbParaaf.Size = new System.Drawing.Size(325, 303);
             this.lsbParaaf.TabIndex = 89;
-            // 
-            // lsbAntwoord
-            // 
-            this.lsbAntwoord.FormattingEnabled = true;
-            this.lsbAntwoord.Location = new System.Drawing.Point(720, 248);
-            this.lsbAntwoord.Name = "lsbAntwoord";
-            this.lsbAntwoord.Size = new System.Drawing.Size(86, 303);
-            this.lsbAntwoord.TabIndex = 90;
             // 
             // tbWerkbeschrijving
             // 
@@ -366,14 +334,11 @@
             this.ClientSize = new System.Drawing.Size(840, 608);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbWerkbeschrijving);
-            this.Controls.Add(this.lsbAntwoord);
             this.Controls.Add(this.lsbParaaf);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnOpslaan);
             this.Controls.Add(this.lsbMaatregelen);
-            this.Controls.Add(this.cbAntwoord);
             this.Controls.Add(this.tbAdd);
             this.Controls.Add(this.tbExtra);
             this.Controls.Add(this.cbMaatregelen);
@@ -428,14 +393,11 @@
         private System.Windows.Forms.ComboBox cbMaatregelen;
         private System.Windows.Forms.TextBox tbExtra;
         private System.Windows.Forms.Button tbAdd;
-        private System.Windows.Forms.ComboBox cbAntwoord;
         private System.Windows.Forms.ListBox lsbMaatregelen;
         private System.Windows.Forms.Button btnOpslaan;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ListBox lsbParaaf;
-        private System.Windows.Forms.ListBox lsbAntwoord;
         private System.Windows.Forms.TextBox tbWerkbeschrijving;
         private System.Windows.Forms.Label label3;
     }

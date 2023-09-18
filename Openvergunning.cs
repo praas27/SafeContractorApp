@@ -84,7 +84,6 @@ namespace SafeContractorApp
         private void tbAdd_Click(object sender, EventArgs e)
         {
             lsbMaatregelen.Items.Add(cbMaatregelen.Text);
-            lsbAntwoord.Items.Add(cbAntwoord.Text);
             lsbParaaf.Items.Add(tbExtra.Text);
         }
 
@@ -93,7 +92,7 @@ namespace SafeContractorApp
             try
             {
                 string query = "INSERT INTO open_vergunning (datum, start_time, eind_time, afdeling, leiding, product, werkbeschrijving, uitvoerder, kopie) " +
-                    "VALUES(@datum, @start_time,eind_time, @afdeling, @leiding, @product, @werkbeschrijving, @uitvoerder,kopie);";
+                    "VALUES(@datum, @start_time,@eind_time, @afdeling, @leiding, @product, @werkbeschrijving, @uitvoerder,@kopie);";
                 using (var connection = new MySqlConnection(Globaal.user))
                 {
                     connection.Open();
@@ -104,7 +103,7 @@ namespace SafeContractorApp
                     command.Parameters.AddWithValue("@afdeling", tbAfdeling.Text);
                     command.Parameters.AddWithValue("@leiding", tbLeiding.Text);
                     command.Parameters.AddWithValue("@product", Formaat_producten());//
-                    command.Parameters.AddWithValue("@werkbeschrijving",tbExtra.Text);
+                    command.Parameters.AddWithValue("@werkbeschrijving",tbWerkbeschrijving.Text);
                     command.Parameters.AddWithValue("@uitvoerder", Formaat_uitvoerder());
                     command.Parameters.AddWithValue("@kopie", Formaat_kopie());
                     command.ExecuteNonQuery();
@@ -138,7 +137,7 @@ namespace SafeContractorApp
                         command.Parameters.AddWithValue("@extra", lsbParaaf.Items[i].ToString());
                         command.Parameters.AddWithValue("@open_vergunning_open_vergunning_id", id);
                         command.Parameters.AddWithValue("@maatregelen_maatregelen_id", Get_maatregel_Id(lsbMaatregelen.Items[i].ToString()));
-                        command.Parameters.AddWithValue("@antwoord", lsbAntwoord.Items[i].ToString());
+                        command.Parameters.AddWithValue("@antwoord", 'J');
                         command.ExecuteNonQuery();
                         connection.Close();
                     }
@@ -151,7 +150,6 @@ namespace SafeContractorApp
         private void cbMaatregelen_SelectedIndexChanged(object sender, EventArgs e)
         {
             tbExtra.Text = string.Empty;
-            cbAntwoord.Text = string.Empty;
         }
     }
 }
