@@ -20,6 +20,7 @@ namespace SafeContractorApp
         public static int sluitId = 0;
         public static string noodnummer = "";
         public static string uitvoerder = "";
+        public static string opdrachtgever = "";
 
         public static string[] FormatText(string text, XFont font, int margin)
         {

@@ -64,11 +64,13 @@ namespace SafeContractorApp
                     optie = reader["optie"].ToString();
                     extra_uitrustingen = reader["extra_uitrustingen"].ToString();
                     gedetaileerde_omschrijving = reader["gedetaileerde_omschrijving"].ToString();
+                    aantal_peronen = int.Parse(reader["aantal_personen"].ToString());
                     firma_id = int.Parse(reader["firma_firma_id"].ToString());
                     werknemer_id = int.Parse(reader["werknemers_werknemer_id"].ToString());
                     opdrachtgever_id = int.Parse(reader["opdrachtgevers_opdrachtgever_id"].ToString());
                     voertuig_id = int.Parse(reader["voertuigen_voertuig_id"].ToString());
                     site_id = int.Parse(reader["sites_site_id"].ToString());
+                    
                 }
                 connection.Close();
             }
@@ -118,6 +120,7 @@ namespace SafeContractorApp
                 {
                     opdrachtgever_naam = reader["opdrachtgever_naam"].ToString();
                     gsm_nummer_opdrachtgever = reader["gsm_nummer"].ToString();
+                    Globaal.opdrachtgever = opdrachtgever_naam;
                 }
                 connection.Close();
             }

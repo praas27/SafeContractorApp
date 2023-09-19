@@ -43,7 +43,6 @@
             this.cbBrand = new System.Windows.Forms.ComboBox();
             this.tbMaatregelen = new System.Windows.Forms.TextBox();
             this.btnSumit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -77,7 +76,7 @@
             // dtpDatum
             // 
             this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDatum.Location = new System.Drawing.Point(28, 48);
+            this.dtpDatum.Location = new System.Drawing.Point(30, 31);
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(182, 20);
             this.dtpDatum.TabIndex = 21;
@@ -85,7 +84,7 @@
             // dtpTot
             // 
             this.dtpTot.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTot.Location = new System.Drawing.Point(433, 48);
+            this.dtpTot.Location = new System.Drawing.Point(435, 31);
             this.dtpTot.Name = "dtpTot";
             this.dtpTot.Size = new System.Drawing.Size(182, 20);
             this.dtpTot.TabIndex = 23;
@@ -93,14 +92,14 @@
             // stpVan
             // 
             this.stpVan.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.stpVan.Location = new System.Drawing.Point(230, 48);
+            this.stpVan.Location = new System.Drawing.Point(232, 31);
             this.stpVan.Name = "stpVan";
             this.stpVan.Size = new System.Drawing.Size(182, 20);
             this.stpVan.TabIndex = 24;
             // 
             // tbVerlenging
             // 
-            this.tbVerlenging.Location = new System.Drawing.Point(635, 48);
+            this.tbVerlenging.Location = new System.Drawing.Point(637, 31);
             this.tbVerlenging.Name = "tbVerlenging";
             this.tbVerlenging.Size = new System.Drawing.Size(182, 20);
             this.tbVerlenging.TabIndex = 25;
@@ -108,7 +107,7 @@
             // cbAard
             // 
             this.cbAard.FormattingEnabled = true;
-            this.cbAard.Location = new System.Drawing.Point(28, 102);
+            this.cbAard.Location = new System.Drawing.Point(30, 85);
             this.cbAard.Name = "cbAard";
             this.cbAard.Size = new System.Drawing.Size(182, 21);
             this.cbAard.TabIndex = 26;
@@ -117,7 +116,7 @@
             // lbxAard
             // 
             this.lbxAard.FormattingEnabled = true;
-            this.lbxAard.Location = new System.Drawing.Point(28, 193);
+            this.lbxAard.Location = new System.Drawing.Point(30, 176);
             this.lbxAard.Name = "lbxAard";
             this.lbxAard.Size = new System.Drawing.Size(182, 147);
             this.lbxAard.TabIndex = 27;
@@ -125,7 +124,7 @@
             // lbxInstallatie
             // 
             this.lbxInstallatie.FormattingEnabled = true;
-            this.lbxInstallatie.Location = new System.Drawing.Point(230, 193);
+            this.lbxInstallatie.Location = new System.Drawing.Point(232, 176);
             this.lbxInstallatie.Name = "lbxInstallatie";
             this.lbxInstallatie.Size = new System.Drawing.Size(182, 147);
             this.lbxInstallatie.TabIndex = 29;
@@ -133,7 +132,7 @@
             // cbInstallatie
             // 
             this.cbInstallatie.FormattingEnabled = true;
-            this.cbInstallatie.Location = new System.Drawing.Point(230, 102);
+            this.cbInstallatie.Location = new System.Drawing.Point(232, 85);
             this.cbInstallatie.Name = "cbInstallatie";
             this.cbInstallatie.Size = new System.Drawing.Size(182, 21);
             this.cbInstallatie.TabIndex = 28;
@@ -142,7 +141,7 @@
             // lbxOmpgeving
             // 
             this.lbxOmpgeving.FormattingEnabled = true;
-            this.lbxOmpgeving.Location = new System.Drawing.Point(433, 193);
+            this.lbxOmpgeving.Location = new System.Drawing.Point(435, 176);
             this.lbxOmpgeving.Name = "lbxOmpgeving";
             this.lbxOmpgeving.Size = new System.Drawing.Size(182, 147);
             this.lbxOmpgeving.TabIndex = 31;
@@ -150,7 +149,7 @@
             // cbOmgeving
             // 
             this.cbOmgeving.FormattingEnabled = true;
-            this.cbOmgeving.Location = new System.Drawing.Point(433, 102);
+            this.cbOmgeving.Location = new System.Drawing.Point(435, 85);
             this.cbOmgeving.Name = "cbOmgeving";
             this.cbOmgeving.Size = new System.Drawing.Size(182, 21);
             this.cbOmgeving.TabIndex = 30;
@@ -159,7 +158,7 @@
             // lbxBrand
             // 
             this.lbxBrand.FormattingEnabled = true;
-            this.lbxBrand.Location = new System.Drawing.Point(635, 193);
+            this.lbxBrand.Location = new System.Drawing.Point(637, 176);
             this.lbxBrand.Name = "lbxBrand";
             this.lbxBrand.Size = new System.Drawing.Size(182, 147);
             this.lbxBrand.TabIndex = 33;
@@ -167,7 +166,7 @@
             // cbBrand
             // 
             this.cbBrand.FormattingEnabled = true;
-            this.cbBrand.Location = new System.Drawing.Point(635, 102);
+            this.cbBrand.Location = new System.Drawing.Point(637, 85);
             this.cbBrand.Name = "cbBrand";
             this.cbBrand.Size = new System.Drawing.Size(182, 21);
             this.cbBrand.TabIndex = 32;
@@ -175,7 +174,7 @@
             // 
             // tbMaatregelen
             // 
-            this.tbMaatregelen.Location = new System.Drawing.Point(28, 513);
+            this.tbMaatregelen.Location = new System.Drawing.Point(30, 496);
             this.tbMaatregelen.Multiline = true;
             this.tbMaatregelen.Name = "tbMaatregelen";
             this.tbMaatregelen.Size = new System.Drawing.Size(789, 54);
@@ -183,7 +182,7 @@
             // 
             // btnSumit
             // 
-            this.btnSumit.Location = new System.Drawing.Point(362, 573);
+            this.btnSumit.Location = new System.Drawing.Point(364, 556);
             this.btnSumit.Name = "btnSumit";
             this.btnSumit.Size = new System.Drawing.Size(75, 23);
             this.btnSumit.TabIndex = 35;
@@ -191,19 +190,10 @@
             this.btnSumit.UseVisualStyleBackColor = true;
             this.btnSumit.Click += new System.EventHandler(this.btnSumit_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(291, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 13);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Naam van de uitvoerde:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 86);
+            this.label2.Location = new System.Drawing.Point(34, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 37;
@@ -212,7 +202,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(237, 86);
+            this.label3.Location = new System.Drawing.Point(239, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(165, 13);
             this.label3.TabIndex = 38;
@@ -221,7 +211,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(441, 86);
+            this.label4.Location = new System.Drawing.Point(443, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 39;
@@ -230,7 +220,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(642, 86);
+            this.label5.Location = new System.Drawing.Point(644, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 40;
@@ -239,7 +229,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 32);
+            this.label6.Location = new System.Drawing.Point(34, 15);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 41;
@@ -248,7 +238,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(237, 32);
+            this.label7.Location = new System.Drawing.Point(239, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(25, 13);
             this.label7.TabIndex = 42;
@@ -257,7 +247,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(441, 32);
+            this.label8.Location = new System.Drawing.Point(443, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(23, 13);
             this.label8.TabIndex = 43;
@@ -266,7 +256,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(642, 32);
+            this.label9.Location = new System.Drawing.Point(644, 15);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 13);
             this.label9.TabIndex = 44;
@@ -275,7 +265,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(32, 497);
+            this.label10.Location = new System.Drawing.Point(34, 480);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(123, 13);
             this.label10.TabIndex = 45;
@@ -284,7 +274,7 @@
             // lbxBrandP
             // 
             this.lbxBrandP.FormattingEnabled = true;
-            this.lbxBrandP.Location = new System.Drawing.Point(635, 346);
+            this.lbxBrandP.Location = new System.Drawing.Point(637, 329);
             this.lbxBrandP.Name = "lbxBrandP";
             this.lbxBrandP.Size = new System.Drawing.Size(182, 147);
             this.lbxBrandP.TabIndex = 49;
@@ -292,7 +282,7 @@
             // lbxOmpgevingP
             // 
             this.lbxOmpgevingP.FormattingEnabled = true;
-            this.lbxOmpgevingP.Location = new System.Drawing.Point(433, 346);
+            this.lbxOmpgevingP.Location = new System.Drawing.Point(435, 329);
             this.lbxOmpgevingP.Name = "lbxOmpgevingP";
             this.lbxOmpgevingP.Size = new System.Drawing.Size(182, 147);
             this.lbxOmpgevingP.TabIndex = 48;
@@ -300,7 +290,7 @@
             // lbxInstallatieP
             // 
             this.lbxInstallatieP.FormattingEnabled = true;
-            this.lbxInstallatieP.Location = new System.Drawing.Point(230, 346);
+            this.lbxInstallatieP.Location = new System.Drawing.Point(232, 329);
             this.lbxInstallatieP.Name = "lbxInstallatieP";
             this.lbxInstallatieP.Size = new System.Drawing.Size(182, 147);
             this.lbxInstallatieP.TabIndex = 47;
@@ -308,14 +298,14 @@
             // lbxAardP
             // 
             this.lbxAardP.FormattingEnabled = true;
-            this.lbxAardP.Location = new System.Drawing.Point(28, 346);
+            this.lbxAardP.Location = new System.Drawing.Point(30, 329);
             this.lbxAardP.Name = "lbxAardP";
             this.lbxAardP.Size = new System.Drawing.Size(182, 147);
             this.lbxAardP.TabIndex = 46;
             // 
             // tbAard
             // 
-            this.tbAard.Location = new System.Drawing.Point(28, 130);
+            this.tbAard.Location = new System.Drawing.Point(30, 113);
             this.tbAard.Multiline = true;
             this.tbAard.Name = "tbAard";
             this.tbAard.Size = new System.Drawing.Size(182, 57);
@@ -323,7 +313,7 @@
             // 
             // tbIstallatie
             // 
-            this.tbIstallatie.Location = new System.Drawing.Point(230, 130);
+            this.tbIstallatie.Location = new System.Drawing.Point(232, 113);
             this.tbIstallatie.Multiline = true;
             this.tbIstallatie.Name = "tbIstallatie";
             this.tbIstallatie.Size = new System.Drawing.Size(182, 57);
@@ -331,7 +321,7 @@
             // 
             // tbOmgeving
             // 
-            this.tbOmgeving.Location = new System.Drawing.Point(433, 129);
+            this.tbOmgeving.Location = new System.Drawing.Point(435, 112);
             this.tbOmgeving.Multiline = true;
             this.tbOmgeving.Name = "tbOmgeving";
             this.tbOmgeving.Size = new System.Drawing.Size(182, 57);
@@ -339,7 +329,7 @@
             // 
             // tbBrand
             // 
-            this.tbBrand.Location = new System.Drawing.Point(635, 129);
+            this.tbBrand.Location = new System.Drawing.Point(637, 112);
             this.tbBrand.Multiline = true;
             this.tbBrand.Name = "tbBrand";
             this.tbBrand.Size = new System.Drawing.Size(182, 57);
@@ -347,7 +337,7 @@
             // 
             // btnA
             // 
-            this.btnA.Location = new System.Drawing.Point(200, 147);
+            this.btnA.Location = new System.Drawing.Point(202, 130);
             this.btnA.Name = "btnA";
             this.btnA.Size = new System.Drawing.Size(24, 23);
             this.btnA.TabIndex = 54;
@@ -357,7 +347,7 @@
             // 
             // btnI
             // 
-            this.btnI.Location = new System.Drawing.Point(403, 147);
+            this.btnI.Location = new System.Drawing.Point(405, 130);
             this.btnI.Name = "btnI";
             this.btnI.Size = new System.Drawing.Size(24, 23);
             this.btnI.TabIndex = 55;
@@ -367,7 +357,7 @@
             // 
             // brnO
             // 
-            this.brnO.Location = new System.Drawing.Point(605, 147);
+            this.brnO.Location = new System.Drawing.Point(607, 130);
             this.brnO.Name = "brnO";
             this.brnO.Size = new System.Drawing.Size(24, 23);
             this.brnO.TabIndex = 56;
@@ -377,7 +367,7 @@
             // 
             // btnB
             // 
-            this.btnB.Location = new System.Drawing.Point(804, 147);
+            this.btnB.Location = new System.Drawing.Point(806, 130);
             this.btnB.Name = "btnB";
             this.btnB.Size = new System.Drawing.Size(24, 23);
             this.btnB.TabIndex = 57;
@@ -411,7 +401,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSumit);
             this.Controls.Add(this.tbMaatregelen);
             this.Controls.Add(this.lbxBrand);
@@ -450,7 +439,6 @@
         private System.Windows.Forms.ComboBox cbBrand;
         private System.Windows.Forms.TextBox tbMaatregelen;
         private System.Windows.Forms.Button btnSumit;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

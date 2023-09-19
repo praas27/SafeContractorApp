@@ -9,7 +9,7 @@
       <Value Profile="(Default)">127.0.0.1</Value>
     </Setting>
     <Setting Name="database" Type="System.String" Scope="User">
-      <Value Profile="(Default)">safecontractorappdb</Value>
+      <Value Profile="(Default)">sca_db</Value>
     </Setting>
     <Setting Name="Images" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
