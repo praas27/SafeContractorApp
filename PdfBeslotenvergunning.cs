@@ -157,7 +157,7 @@ namespace SafeContractorApp
             gfx.DrawString("Handtekening", font_sub, XBrushes.Black, margeX + 105, 460);
             gfx.DrawString("Handtekening", font_sub, XBrushes.Black, margeX + 205, 460);
             gfx.DrawString("UITVOERDER", font_sub, XBrushes.Black, margeX + 5, 470);
-            gfx.DrawString("OPERATOR", font_sub, XBrushes.Black, margeX + 105, 470);
+            gfx.DrawString("OPDRACHTGEVER", font_sub, XBrushes.Black, margeX + 105, 470);
             gfx.DrawString("PREVENTIEDIENST", font_sub, XBrushes.Black, margeX + 205, 470);
 
             //box5

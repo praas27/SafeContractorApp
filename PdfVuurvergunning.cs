@@ -30,7 +30,6 @@ namespace SafeContractorApp
             string datum = string.Empty;
             string start_time = string.Empty;
             string end_time = string.Empty;
-            string verlenging = string.Empty;
             string bijkomnde_maatregelen = string.Empty;
 
             
@@ -79,7 +78,6 @@ namespace SafeContractorApp
                     datum = reader["datum"].ToString().Substring(0, 10);
                     start_time = reader["start_time"].ToString().Substring(0,5);
                     end_time = reader["end_time"].ToString().Substring(0,5);
-                    verlenging = reader["verlenging"].ToString();
                     bijkomnde_maatregelen = reader["bijkomnde_maatregelen"].ToString();
                 }
                 connection.Close();
@@ -118,13 +116,11 @@ namespace SafeContractorApp
             gfx.DrawString(datum, font_antw, XBrushes.Black, marge+410, 100);
             gfx.DrawString("Tijd: ", font_sub, XBrushes.Black, marge + 350, 110);
             gfx.DrawString($"van {start_time} tot {end_time}", font_antw, XBrushes.Black, marge + 410, 110);
-            gfx.DrawString("Verlenging: ", font_sub, XBrushes.Black, marge + 350, 120);
-            gfx.DrawString(verlenging, font_antw, XBrushes.Black, marge + 410, 120);
 
             gfx.DrawString("Aard van het werk", font_sub, XBrushes.Black, marge, 140);
             gfx.DrawString("Maatregelen", font_sub, XBrushes.Black, marge, 260);
             gfx.DrawString("1. Installatie waaraan gewerkt wordt", font_sub, XBrushes.Black, marge, 280);
-            gfx.DrawString("2. Omgeving", font_sub, XBrushes.Black, marge, 400);
+            gfx.DrawString("2. Omgeving brandbare materialen, chemicaliën, afval of stof : ", font_sub, XBrushes.Black, marge, 400);
             gfx.DrawString("3. Brandbestrijding", font_sub, XBrushes.Black, marge, 520);
             gfx.DrawString("4. Bijkomende maatregelen: ", font_sub, XBrushes.Black, marge, 640);
 

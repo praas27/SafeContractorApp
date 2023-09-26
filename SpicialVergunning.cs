@@ -297,5 +297,40 @@ namespace SafeContractorApp
             DeleteDataFromTable("beschermiddelen", "beschermiddelen", cbBeschermidelen.Text);
             Load_beschermiddelen();
         }
+
+        private void cbCatogorie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            char type = '0';
+            switch (cbCatogorie.SelectedIndex)
+            {
+                case 0:
+                    type = 'A'; break;
+                case 1:
+                    type = 'I'; break;
+                case 2:
+                    type = 'O'; break;
+                case 3:
+                    type = 'B'; break;
+                default: break;
+            }
+
+            cbWerk.Items.Clear();
+            cbWerk.Text = string.Empty;
+            string query = "select werken from werken where type=@type";
+            using (var connection = new MySqlConnection(Globaal.user))
+            {
+                connection.Open();
+                var command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@type", type);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string site_naam = reader["werken"].ToString();
+                    cbWerk.Items.Add(site_naam);
+                }
+                connection.Close();
+            }
+        }
     }
 }

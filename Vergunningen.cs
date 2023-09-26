@@ -53,11 +53,12 @@ namespace SafeContractorApp
                 PdfOpenvergunning.GenDoc(id);
             }
             catch { }
-            //try
-            //{
+            try
+            {
                 PdfBeslotenvergunning.GenDoc(id);
-            //}catch { }
-            
+            }catch { }
+            Print ss= new Print();
+            ss.Show();
         }
     }
 }

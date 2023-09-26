@@ -231,8 +231,8 @@ namespace SafeContractorApp
             gfx.DrawString(eind_datum, font_antw, XBrushes.Black, marge + lsd, 400);
             gfx.DrawString(""+aantal_peronen, font_antw, XBrushes.Black, marge + lsd, 420);
 
-            gfx.DrawString("Mogelijke geveren / voorzorgmaatregelen / toelatingen:", font_sub, XBrushes.Black, marge, 440);
-            gfx.DrawString("Extra uitrustngen: ", font_sub, XBrushes.Black, marge,540);
+            gfx.DrawString("Mogelijke gevaren / voorzorgmaatregelen / toelatingen:", font_sub, XBrushes.Black, marge, 440);
+            gfx.DrawString("Extra uitrustingen: ", font_sub, XBrushes.Black, marge,540);
             gfx.DrawString("Gedetailleerde Omschrijving", font_sub, XBrushes.Black, marge,640);
 
 
@@ -308,7 +308,7 @@ namespace SafeContractorApp
             gfx2.DrawString(site_naam, font_antw, XBrushes.Black, 260, 270);
             gfx2.DrawString(gsm_nummer_site, font_Titel, XBrushes.Red, 260, 290);
 
-            gfx2.DrawString("1. Het voertuig dient binnen de aangeduide perkeervakken te worden", font_antw, XBrushes.Black, 125, 330);
+            gfx2.DrawString("1. Het voertuig dient binnen de aangeduide parkeervakken te worden", font_antw, XBrushes.Black, 125, 330);
             gfx2.DrawString("   geplaatst.", font_antw, XBrushes.Black, 125, 340);
             gfx2.DrawString("2. Indien bij uitzondering geen duidelijke parkeervakken aanwezig zijn, moet", font_antw, XBrushes.Black, 125, 360);
             gfx2.DrawString("   het voertuig zo geplaatst wordendat het geen gevaar of hinder vormt voor", font_antw, XBrushes.Black, 125, 370);

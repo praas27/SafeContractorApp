@@ -32,7 +32,6 @@
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.dtpTot = new System.Windows.Forms.DateTimePicker();
             this.stpVan = new System.Windows.Forms.DateTimePicker();
-            this.tbVerlenging = new System.Windows.Forms.TextBox();
             this.cbAard = new System.Windows.Forms.ComboBox();
             this.lbxAard = new System.Windows.Forms.ListBox();
             this.lbxInstallatie = new System.Windows.Forms.ListBox();
@@ -50,7 +49,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lbxBrandP = new System.Windows.Forms.ListBox();
             this.lbxOmpgevingP = new System.Windows.Forms.ListBox();
@@ -76,7 +74,7 @@
             // dtpDatum
             // 
             this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDatum.Location = new System.Drawing.Point(30, 31);
+            this.dtpDatum.Location = new System.Drawing.Point(91, 30);
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(182, 20);
             this.dtpDatum.TabIndex = 21;
@@ -84,7 +82,7 @@
             // dtpTot
             // 
             this.dtpTot.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTot.Location = new System.Drawing.Point(435, 31);
+            this.dtpTot.Location = new System.Drawing.Point(496, 30);
             this.dtpTot.Name = "dtpTot";
             this.dtpTot.Size = new System.Drawing.Size(182, 20);
             this.dtpTot.TabIndex = 23;
@@ -92,17 +90,10 @@
             // stpVan
             // 
             this.stpVan.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.stpVan.Location = new System.Drawing.Point(232, 31);
+            this.stpVan.Location = new System.Drawing.Point(293, 30);
             this.stpVan.Name = "stpVan";
             this.stpVan.Size = new System.Drawing.Size(182, 20);
             this.stpVan.TabIndex = 24;
-            // 
-            // tbVerlenging
-            // 
-            this.tbVerlenging.Location = new System.Drawing.Point(637, 31);
-            this.tbVerlenging.Name = "tbVerlenging";
-            this.tbVerlenging.Size = new System.Drawing.Size(182, 20);
-            this.tbVerlenging.TabIndex = 25;
             // 
             // cbAard
             // 
@@ -229,7 +220,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 15);
+            this.label6.Location = new System.Drawing.Point(95, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 41;
@@ -238,7 +229,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(239, 15);
+            this.label7.Location = new System.Drawing.Point(300, 14);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(25, 13);
             this.label7.TabIndex = 42;
@@ -247,20 +238,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(443, 15);
+            this.label8.Location = new System.Drawing.Point(504, 14);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(23, 13);
             this.label8.TabIndex = 43;
             this.label8.Text = "Tot";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(644, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 13);
-            this.label9.TabIndex = 44;
-            this.label9.Text = "Verlenging";
             // 
             // label10
             // 
@@ -393,7 +375,6 @@
             this.Controls.Add(this.lbxInstallatieP);
             this.Controls.Add(this.lbxAardP);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -411,7 +392,6 @@
             this.Controls.Add(this.cbInstallatie);
             this.Controls.Add(this.lbxAard);
             this.Controls.Add(this.cbAard);
-            this.Controls.Add(this.tbVerlenging);
             this.Controls.Add(this.stpVan);
             this.Controls.Add(this.dtpTot);
             this.Controls.Add(this.dtpDatum);
@@ -428,7 +408,6 @@
         private System.Windows.Forms.DateTimePicker dtpDatum;
         private System.Windows.Forms.DateTimePicker dtpTot;
         private System.Windows.Forms.DateTimePicker stpVan;
-        private System.Windows.Forms.TextBox tbVerlenging;
         private System.Windows.Forms.ComboBox cbAard;
         private System.Windows.Forms.ListBox lbxAard;
         private System.Windows.Forms.ListBox lbxInstallatie;
@@ -446,7 +425,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListBox lbxBrandP;
         private System.Windows.Forms.ListBox lbxOmpgevingP;

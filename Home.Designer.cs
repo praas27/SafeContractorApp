@@ -36,7 +36,7 @@
             this.btnUiInfo = new System.Windows.Forms.Button();
             this.btnInInfo = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
-            this.btnMaveerar = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.btnSpicialVergunning = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnAdminpage = new System.Windows.Forms.Button();
@@ -65,7 +65,7 @@
             this.MenuPanel.Controls.Add(this.btnUiInfo);
             this.MenuPanel.Controls.Add(this.btnInInfo);
             this.MenuPanel.Controls.Add(this.btnStudents);
-            this.MenuPanel.Controls.Add(this.btnMaveerar);
+            this.MenuPanel.Controls.Add(this.btnExcel);
             this.MenuPanel.Controls.Add(this.btnSpicialVergunning);
             this.MenuPanel.Controls.Add(this.btnSetting);
             this.MenuPanel.Controls.Add(this.btnAdminpage);
@@ -177,20 +177,23 @@
             this.btnStudents.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStudents.UseVisualStyleBackColor = true;
             // 
-            // btnMaveerar
+            // btnExcel
             // 
-            this.btnMaveerar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMaveerar.FlatAppearance.BorderSize = 0;
-            this.btnMaveerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaveerar.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.btnMaveerar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(140)))), ((int)(((byte)(151)))));
-            this.btnMaveerar.Location = new System.Drawing.Point(0, 250);
-            this.btnMaveerar.Name = "btnMaveerar";
-            this.btnMaveerar.Size = new System.Drawing.Size(200, 40);
-            this.btnMaveerar.TabIndex = 9;
-            this.btnMaveerar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaveerar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMaveerar.UseVisualStyleBackColor = true;
+            this.btnExcel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExcel.FlatAppearance.BorderSize = 0;
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.btnExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(140)))), ((int)(((byte)(151)))));
+            this.btnExcel.Location = new System.Drawing.Point(0, 250);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(200, 40);
+            this.btnExcel.TabIndex = 9;
+            this.btnExcel.Text = "Excel";
+            this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            this.btnExcel.Leave += new System.EventHandler(this.btnExcel_Leave);
             // 
             // btnSpicialVergunning
             // 
@@ -203,7 +206,7 @@
             this.btnSpicialVergunning.Name = "btnSpicialVergunning";
             this.btnSpicialVergunning.Size = new System.Drawing.Size(200, 40);
             this.btnSpicialVergunning.TabIndex = 7;
-            this.btnSpicialVergunning.Text = "Admin vergunning";
+            this.btnSpicialVergunning.Text = "Add vergunning optie";
             this.btnSpicialVergunning.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSpicialVergunning.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSpicialVergunning.UseVisualStyleBackColor = true;
@@ -239,7 +242,7 @@
             this.btnAdminpage.Name = "btnAdminpage";
             this.btnAdminpage.Size = new System.Drawing.Size(200, 40);
             this.btnAdminpage.TabIndex = 4;
-            this.btnAdminpage.Text = "Admin gebruiker";
+            this.btnAdminpage.Text = "Add gebruiker";
             this.btnAdminpage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminpage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminpage.UseVisualStyleBackColor = true;
@@ -395,7 +398,7 @@
         private System.Windows.Forms.Button btnUiInfo;
         private System.Windows.Forms.Button btnInInfo;
         private System.Windows.Forms.Button btnStudents;
-        private System.Windows.Forms.Button btnMaveerar;
+        private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnSpicialVergunning;
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button btnAdminpage;

@@ -51,13 +51,14 @@ namespace SafeContractorApp
             }
         }
 
-        private void Load_voetuigen()
+        private void Load_voetuigen(int firma_id)
         {
-            string query = "select voertuig_naam from voertuigen";
+            string query = "select voertuig_naam from voertuigen where firma_firma_id = @firma_id";
             using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@firma_id", firma_id);
                 MySqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
@@ -69,13 +70,14 @@ namespace SafeContractorApp
             }
         }
 
-        private void Load_werknemer()
+        private void Load_werknemer(int firma_id)
         {
-            string query = "select werknemer_naam from werknemers";
+            string query = "select werknemer_naam from werknemers where firma_firma_id = @firma_id";
             using (var connection = new MySqlConnection(Globaal.user))
             {
                 connection.Open();
                 var command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@firma_id", firma_id);
                 MySqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
@@ -105,36 +107,12 @@ namespace SafeContractorApp
             }
         }
 
-        private int GetIdFromTable(string tableName, string columnName, string value)
-        {
-            int id = 0;
-            string query = $"SELECT {columnName}_id FROM {tableName} WHERE {columnName}_naam = @value";
-
-            using (var connection = new MySqlConnection(Globaal.user))
-            {
-                connection.Open();
-                var command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@value", value);
-                MySqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    id = int.Parse(reader[$"{columnName}_id"].ToString());
-                }
-                connection.Close();
-            }
-
-            return id;
-        }
-
-
         public AadVergunningen()
         {
             InitializeComponent();
             Load_firma();
             Load_site();
-            Load_voetuigen();
-            Load_werknemer();
+           
             Load_opdrachtgever();
         }
 
@@ -143,11 +121,11 @@ namespace SafeContractorApp
         {
             try
             {
-                int firma_id = GetIdFromTable("firma", "firma", cbFirma.Text);
-                int werknemer_id = GetIdFromTable("werknemers", "werknemer", cbWerknemer.Text);
-                int opdrachtgever_id = GetIdFromTable("opdrachtgevers", "opdrachtgever", cbOpdrachtgever.Text);
-                int voertuig_id = GetIdFromTable("voertuigen", "voertuig", cbVoertuigen.Text);
-                int site_id = GetIdFromTable("sites", "site", cbSite.Text);
+                int firma_id = Globaal.GetIdFromTable("firma", "firma", cbFirma.Text);
+                int werknemer_id = Globaal.GetIdFromTable("werknemers", "werknemer", cbWerknemer.Text);
+                int opdrachtgever_id = Globaal.GetIdFromTable("opdrachtgevers", "opdrachtgever", cbOpdrachtgever.Text);
+                int voertuig_id = Globaal.GetIdFromTable("voertuigen", "voertuig", cbVoertuigen.Text);
+                int site_id = Globaal.GetIdFromTable("sites", "site", cbSite.Text);
 
                 string query = "INSERT INTO vergunning " +
                     "(firma_firma_id, werknemers_werknemer_id, opdrachtgevers_opdrachtgever_id, voertuigen_voertuig_id, sites_site_id," +
@@ -242,6 +220,9 @@ namespace SafeContractorApp
                 tbGetaileerde.Text = string.Empty;
                 tbToelatingen.Text = string.Empty;
                 tbExtra.Text = string.Empty;
+                chbBeslotenvergunning.Checked = false;
+                chbOpenvergunning.Checked = false;
+                chbVuurvergunning.Checked = false;
             }
             catch { }
             
@@ -272,6 +253,12 @@ namespace SafeContractorApp
                 Openvergunning ss = new Openvergunning();
                 ss.Show();
             }
+        }
+
+        private void cbFirma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Load_voetuigen(Globaal.GetIdFromTable("firma", "firma", cbFirma.Text));
+            Load_werknemer(Globaal.GetIdFromTable("firma", "firma", cbFirma.Text));
         }
     }
 }

@@ -132,5 +132,20 @@ namespace SafeContractorApp
         {
             btnSetting.ForeColor = Color.FromArgb(147, 140, 151);
         }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            OpenSchildForm(new Excel(), sender);
+            lbTitel.Text = "Excel";
+            pnlNav.Height = btnExcel.Height;
+            pnlNav.Top = btnExcel.Top;
+            pnlNav.Left = btnExcel.Left;
+            btnExcel.ForeColor = Color.White;
+        }
+
+        private void btnExcel_Leave(object sender, EventArgs e)
+        {
+            btnExcel.ForeColor = Color.FromArgb(147, 140, 151);
+        }
     }
 }

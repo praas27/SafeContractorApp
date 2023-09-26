@@ -105,8 +105,8 @@ namespace SafeContractorApp
             //try
             //{
                 string query = "INSERT INTO vuurvergunning (" +
-                "datum,start_time,end_time,verlenging,bijkomnde_maatregelen) " +
-                "VALUES (@datum,@start_time,@end_time,@verlenging,@bijkomnde_maatregelen);";
+                "datum,start_time,end_time,bijkomnde_maatregelen) " +
+                "VALUES (@datum,@start_time,@end_time,@bijkomnde_maatregelen);";
                 using (var connection = new MySqlConnection(Globaal.user))
                 {
                     connection.Open();
@@ -114,7 +114,6 @@ namespace SafeContractorApp
                     command.Parameters.AddWithValue("@datum", dtpDatum.Value);
                     command.Parameters.AddWithValue("@start_time", stpVan.Value);
                     command.Parameters.AddWithValue("@end_time", dtpTot.Value);
-                    command.Parameters.AddWithValue("@verlenging", int.Parse(tbVerlenging.Text));
                     command.Parameters.AddWithValue("@bijkomnde_maatregelen", tbMaatregelen.Text);
                     command.ExecuteNonQuery();
                     connection.Close();

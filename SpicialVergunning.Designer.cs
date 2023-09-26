@@ -63,11 +63,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(353, 9);
+            this.label1.Location = new System.Drawing.Point(303, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 13);
+            this.label1.Size = new System.Drawing.Size(116, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Vuurvergunning";
+            this.label1.Text = "VUURVERGUNING";
             // 
             // cbWerk
             // 
@@ -89,6 +89,7 @@
             this.cbCatogorie.Name = "cbCatogorie";
             this.cbCatogorie.Size = new System.Drawing.Size(212, 21);
             this.cbCatogorie.TabIndex = 4;
+            this.cbCatogorie.SelectedIndexChanged += new System.EventHandler(this.cbCatogorie_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -132,11 +133,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(353, 103);
+            this.label4.Location = new System.Drawing.Point(292, 104);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 13);
+            this.label4.Size = new System.Drawing.Size(158, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Open vergunning";
+            this.label4.Text = "OPENEN VAN LEIDINGEN";
             // 
             // cbMaatregel
             // 
@@ -179,11 +180,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(353, 221);
+            this.label6.Location = new System.Drawing.Point(303, 210);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 13);
+            this.label6.Size = new System.Drawing.Size(132, 13);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Gesloten vergunning";
+            this.label6.Text = "BESLOTEN RUIMTES";
             // 
             // label7
             // 

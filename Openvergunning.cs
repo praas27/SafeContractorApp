@@ -126,8 +126,8 @@ namespace SafeContractorApp
                     connection.Close();
                 }
 
-                query = "INSERT INTO maatregelen_has_open_vergunning (maatregelen_maatregelen_id, open_vergunning_open_vergunning_id, antwoord, extra)" +
-                    "VALUES(@maatregelen_maatregelen_id, @open_vergunning_open_vergunning_id, @antwoord, @extra);";
+                query = "INSERT INTO maatregelen_has_open_vergunning (maatregelen_maatregelen_id, open_vergunning_open_vergunning_id, extra)" +
+                    "VALUES(@maatregelen_maatregelen_id, @open_vergunning_open_vergunning_id, @extra);";
                 for (int i = 0; i < lsbMaatregelen.Items.Count; i++)
                 {
                     using (var connection = new MySqlConnection(Globaal.user))
@@ -137,7 +137,6 @@ namespace SafeContractorApp
                         command.Parameters.AddWithValue("@extra", lsbParaaf.Items[i].ToString());
                         command.Parameters.AddWithValue("@open_vergunning_open_vergunning_id", id);
                         command.Parameters.AddWithValue("@maatregelen_maatregelen_id", Get_maatregel_Id(lsbMaatregelen.Items[i].ToString()));
-                        command.Parameters.AddWithValue("@antwoord", 'J');
                         command.ExecuteNonQuery();
                         connection.Close();
                     }

@@ -66,6 +66,7 @@
             this.cbFirma.Name = "cbFirma";
             this.cbFirma.Size = new System.Drawing.Size(124, 21);
             this.cbFirma.TabIndex = 0;
+            this.cbFirma.SelectedIndexChanged += new System.EventHandler(this.cbFirma_SelectedIndexChanged);
             // 
             // label1
             // 
