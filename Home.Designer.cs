@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
@@ -374,8 +375,9 @@
             this.Controls.Add(this.panelStart);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.MenuPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Home";
-            this.Text = "Home";
+            this.Text = "SCA";
             this.Load += new System.EventHandler(this.Home_Load);
             this.MenuPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
