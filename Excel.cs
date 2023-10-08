@@ -39,7 +39,7 @@ namespace SafeContractorApp
             query += string.Join(" , ", conditions);
 
             // Voeg een WHERE-clausule toe voor het vegunning_id-bereik
-            query += $" FROM vergunning WHERE vegunning_id >= {int.Parse(tbVan.Text)} AND vegunning_id <= {int.Parse(tbTot.Text)}";
+            query += $" FROM vergunning WHERE start_datum >= '{dtpStart.Text}' AND start_datum <= '{dtpStop.Text}'";
 
             // Als geen enkel selectievakje is aangevinkt, selecteer dan alles (of pas dit aan naar je behoeften)
             if (conditions.Count == 0)
@@ -70,7 +70,7 @@ namespace SafeContractorApp
                         writer.Write(reader.GetName(i));
                         if (i < reader.FieldCount - 1)
                         {
-                            writer.Write(",");
+                            writer.Write(";");
                         }
                     }
                     writer.WriteLine();
@@ -83,7 +83,7 @@ namespace SafeContractorApp
                             writer.Write(reader[i]);
                             if (i < reader.FieldCount - 1)
                             {
-                                writer.Write(",");
+                                writer.Write(";");
                             }
                         }
                         writer.WriteLine();
@@ -102,7 +102,16 @@ namespace SafeContractorApp
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            ExportVergunningDataToCSV();
+            try
+            {
+                ExportVergunningDataToCSV();
+                lbStat.Text = "Klaar!";
+            }
+            catch (Exception ex)
+            {
+                lbStat.Text = "Error: " + ex;
+            }
+            
         }
     }
 }

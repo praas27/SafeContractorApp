@@ -45,16 +45,18 @@
             this.besloten_vergunning_id = new System.Windows.Forms.CheckBox();
             this.open_vergunning_id = new System.Windows.Forms.CheckBox();
             this.vuurvergunning_id = new System.Windows.Forms.CheckBox();
-            this.tbVan = new System.Windows.Forms.TextBox();
-            this.tbTot = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
+            this.dtpStop = new System.Windows.Forms.DateTimePicker();
+            this.lbStat = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnExport
             // 
             this.btnExport.BackColor = System.Drawing.Color.White;
-            this.btnExport.Location = new System.Drawing.Point(357, 405);
+            this.btnExport.Location = new System.Drawing.Point(340, 339);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(75, 23);
             this.btnExport.TabIndex = 0;
@@ -222,20 +224,6 @@
             this.vuurvergunning_id.Text = "vuurvergunning_id";
             this.vuurvergunning_id.UseVisualStyleBackColor = true;
             // 
-            // tbVan
-            // 
-            this.tbVan.Location = new System.Drawing.Point(206, 34);
-            this.tbVan.Name = "tbVan";
-            this.tbVan.Size = new System.Drawing.Size(100, 20);
-            this.tbVan.TabIndex = 17;
-            // 
-            // tbTot
-            // 
-            this.tbTot.Location = new System.Drawing.Point(403, 37);
-            this.tbTot.Name = "tbTot";
-            this.tbTot.Size = new System.Drawing.Size(100, 20);
-            this.tbTot.TabIndex = 18;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -248,11 +236,44 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(343, 41);
+            this.label2.Location = new System.Drawing.Point(378, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 20;
             this.label2.Text = "tot en met";
+            // 
+            // mySqlDataAdapter1
+            // 
+            this.mySqlDataAdapter1.DeleteCommand = null;
+            this.mySqlDataAdapter1.InsertCommand = null;
+            this.mySqlDataAdapter1.SelectCommand = null;
+            this.mySqlDataAdapter1.UpdateCommand = null;
+            // 
+            // dtpStart
+            // 
+            this.dtpStart.CustomFormat = "yyyy-MM-dd";
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStart.Location = new System.Drawing.Point(213, 37);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(124, 20);
+            this.dtpStart.TabIndex = 21;
+            // 
+            // dtpStop
+            // 
+            this.dtpStop.CustomFormat = "yyyy-MM-dd";
+            this.dtpStop.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStop.Location = new System.Drawing.Point(437, 38);
+            this.dtpStop.Name = "dtpStop";
+            this.dtpStop.Size = new System.Drawing.Size(124, 20);
+            this.dtpStop.TabIndex = 23;
+            // 
+            // lbStat
+            // 
+            this.lbStat.AutoSize = true;
+            this.lbStat.Location = new System.Drawing.Point(362, 390);
+            this.lbStat.Name = "lbStat";
+            this.lbStat.Size = new System.Drawing.Size(0, 13);
+            this.lbStat.TabIndex = 24;
             // 
             // Excel
             // 
@@ -260,10 +281,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbStat);
+            this.Controls.Add(this.dtpStop);
+            this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbTot);
-            this.Controls.Add(this.tbVan);
             this.Controls.Add(this.besloten_vergunning_id);
             this.Controls.Add(this.open_vergunning_id);
             this.Controls.Add(this.vuurvergunning_id);
@@ -308,9 +330,11 @@
         private System.Windows.Forms.CheckBox besloten_vergunning_id;
         private System.Windows.Forms.CheckBox open_vergunning_id;
         private System.Windows.Forms.CheckBox vuurvergunning_id;
-        private System.Windows.Forms.TextBox tbVan;
-        private System.Windows.Forms.TextBox tbTot;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter1;
+        private System.Windows.Forms.DateTimePicker dtpStart;
+        private System.Windows.Forms.DateTimePicker dtpStop;
+        private System.Windows.Forms.Label lbStat;
     }
 }
