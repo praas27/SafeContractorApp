@@ -53,6 +53,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(166, 20);
             this.tbPassword.TabIndex = 1;
+            this.tbPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPassword_KeyPress);
             // 
             // label2
             // 
@@ -74,7 +75,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(137, 199);
+            this.btnLogin.Location = new System.Drawing.Point(190, 155);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 4;
@@ -85,7 +86,7 @@
             // lbFeedback
             // 
             this.lbFeedback.AutoSize = true;
-            this.lbFeedback.Location = new System.Drawing.Point(37, 262);
+            this.lbFeedback.Location = new System.Drawing.Point(26, 212);
             this.lbFeedback.Name = "lbFeedback";
             this.lbFeedback.Size = new System.Drawing.Size(313, 13);
             this.lbFeedback.TabIndex = 6;

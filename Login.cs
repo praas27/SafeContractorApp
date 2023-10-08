@@ -15,14 +15,7 @@ namespace SafeContractorApp
 {
     public partial class Login : Form
     {
-        public Login()
-        {
-            InitializeComponent();
-            tbHost.Text = Properties.Settings.Default.host;
-            tbDatabase.Text = Properties.Settings.Default.database;
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void GetIn()
         {
             //string connectionString = "server=127.0.0.1;database=safecontractorappdb_4;uid=root;pwd=lijn-applications_29_08_2023;";
             string server = tbHost.Text;
@@ -57,6 +50,31 @@ namespace SafeContractorApp
             Properties.Settings.Default.host = tbHost.Text;
             Properties.Settings.Default.database = tbDatabase.Text;
             Properties.Settings.Default.Save();
+        }
+
+        public Login()
+        {
+            InitializeComponent();
+            tbHost.Text = Properties.Settings.Default.host;
+            tbDatabase.Text = Properties.Settings.Default.database;
+            tbPassword.PasswordChar = '*';
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            GetIn();
+        }
+
+        private void tbPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Perform the desired action here
+                GetIn();
+
+                // Prevent the TextBox from processing the Enter key further
+                e.Handled = true;
+            }
         }
     }
 }

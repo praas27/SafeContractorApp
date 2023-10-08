@@ -41,23 +41,35 @@ namespace SafeContractorApp
         private void btnPDF_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = dgvVergunning.SelectedRows[0];
-            int id = int.Parse(selectedRow.Cells[0].Value.ToString());
-            PdfVergunning.GenDoc(id);
+            Globaal.printId = int.Parse(selectedRow.Cells[0].Value.ToString());
+            PdfVergunning.GenDoc(Globaal.printId);
             try
             {
-                PdfVuurvergunning.GenDoc(id);
+                PdfVuurvergunning.GenDoc(Globaal.printId);
             }
             catch { }
             try
             {
-                PdfOpenvergunning.GenDoc(id);
+                PdfOpenvergunning.GenDoc(Globaal.printId);
             }
             catch { }
             try
             {
-                PdfBeslotenvergunning.GenDoc(id);
+                PdfBeslotenvergunning.GenDoc(Globaal.printId);
             }catch { }
             Print ss= new Print();
+            ss.Show();
+        }
+
+        private void dgvVergunning_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow selectedRow = dgvVergunning.SelectedRows[0];
+            Globaal.printId = int.Parse(selectedRow.Cells[0].Value.ToString());
+            PdfVergunning.GenDoc(Globaal.printId);
+            try { PdfVuurvergunning.GenDoc(Globaal.printId); } catch { }
+            try { PdfOpenvergunning.GenDoc(Globaal.printId); } catch { }
+            try { PdfBeslotenvergunning.GenDoc(Globaal.printId); } catch { }
+            Print ss = new Print();
             ss.Show();
         }
     }

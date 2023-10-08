@@ -42,7 +42,7 @@ namespace SafeContractorApp
                 {
                     Properties.Settings.Default.Images = dialog.SelectedPath;
                     Properties.Settings.Default.Save(); // Opslaan van de instellingen
-                    tbPath.Text = Properties.Settings.Default.Images; // Weergeven in het tekstvak
+                    tbImages.Text = Properties.Settings.Default.Images; // Weergeven in het tekstvak
                 }
             }
         }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvVergunning = new System.Windows.Forms.DataGridView();
-            this.btnPDF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVergunning)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,18 +37,9 @@
             this.dgvVergunning.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVergunning.Location = new System.Drawing.Point(13, 13);
             this.dgvVergunning.Name = "dgvVergunning";
-            this.dgvVergunning.Size = new System.Drawing.Size(791, 455);
+            this.dgvVergunning.Size = new System.Drawing.Size(791, 502);
             this.dgvVergunning.TabIndex = 0;
-            // 
-            // btnPDF
-            // 
-            this.btnPDF.Location = new System.Drawing.Point(355, 492);
-            this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(75, 23);
-            this.btnPDF.TabIndex = 1;
-            this.btnPDF.Text = "Print";
-            this.btnPDF.UseVisualStyleBackColor = true;
-            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
+            this.dgvVergunning.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVergunning_CellDoubleClick);
             // 
             // Vergunningen
             // 
@@ -57,7 +47,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(816, 527);
-            this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.dgvVergunning);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Vergunningen";
@@ -70,6 +59,5 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvVergunning;
-        private System.Windows.Forms.Button btnPDF;
     }
 }
