@@ -33,7 +33,6 @@ namespace SafeContractorApp
                     Globaal.username = tbUsername.Text;
                     Globaal.host = tbHost.Text;
                     Globaal.database = tbDatabase.Text;
-                    lbFeedback.Text = "Connection opened successfully.";
                     Globaal.foutcode = "Welcome";
                     connection.Close();
                     Globaal.user = connectionString;
@@ -42,10 +41,10 @@ namespace SafeContractorApp
                     ss.Show();
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 Globaal.foutcode = "Error";
-                lbFeedback.Text = $"Error: {ex.Message}";
+                btnLogin.Text = "Try again";
             }
             Properties.Settings.Default.host = tbHost.Text;
             Properties.Settings.Default.database = tbDatabase.Text;
